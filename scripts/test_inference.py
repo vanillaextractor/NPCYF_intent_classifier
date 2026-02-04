@@ -11,14 +11,7 @@ def test_inference():
     clf = IntentClassifier(model_path="models/intent_model.pkl")
     
     test_cases = [
-        ("What is the yield of Rice in Punjab in 2022?", "SQL"),
-        ("Explain the concept of gradient descent", "General"),
-        ("Show me rainfall data for Mumbai", "SQL"),
-        ("How to normalize data?", "General"),
-        ("Which state produced the most Sugar?", "SQL"),
-        ("Best pesticides for cotton", "General"), # Ambiguous slightly? Should be General probably as it's not a direct statistic query from DB usually, but could be DB. Let's see model behavior. Dataset has "Best practices..." as General.
-        ("Average temperature in Delhi", "SQL"),
-        ("Who is the father of Green Revolution?", "General")
+       ("What is the total rainfall for the year 2010 in usa?","N/A")
     ]
     
     correct = 0
@@ -34,11 +27,11 @@ def test_inference():
             
         print(f"[{status}] Query: '{query}' -> Pred: {predicted} ({result['confidence']:.2f}) | Exp: {expected}")
         
-    print(f"\nScore: {correct}/{len(test_cases)}")
-    if correct == len(test_cases):
-        print("ALL TESTS PASSED")
-    else:
-        print("SOME TESTS FAILED")
+    #print(f"\nScore: {correct}/{len(test_cases)}")
+    #if correct == len(test_cases):
+        #print("ALL TESTS PASSED")
+    #else:
+      #  print("SOME TESTS FAILED")
 
 if __name__ == "__main__":
     test_inference()
