@@ -1,0 +1,51 @@
+query,ground_truth_original,ground_truth,predicted,confidence,is_correct
+What is the total rainfall of the year 2010 in Bihar?,1,SQL,SQL,0.7777,True
+"What is average Rainfall in the month of june,july,sept in year 2000 in west bengal?",1,SQL,SQL,0.8362,True
+find the Maximum Temperature of kolkata in 2000.?,1,SQL,SQL,0.782,True
+What is the total rainfall of the year 2020 in Odisha?,1,SQL,SQL,0.7719,True
+find the Maximum Temperature of kolkata in 2000.?,1,SQL,SQL,0.782,True
+What is average Rainfall in Bihar in year 2000?,1,SQL,SQL,0.7713,True
+find the average temperature of west bengal in 2000?,1,SQL,SQL,0.8405,True
+is wheat available in crop table?,1,SQL,General,0.6766,False
+What is the total rainfall of Kerala in the year 2010?,1,SQL,SQL,0.7036,True
+What are the type of season are there in the database?,1,SQL,SQL,0.716,True
+What is the purpose of education in society?,0,General,General,0.5456,True
+What causes day and night on Earth?,0,General,General,0.5456,True
+Why do seasons change?a,0,General,General,0.5456,True
+What is the role of money in daily life?,0,General,General,0.5456,True
+What is a government?,0,General,General,0.5456,True
+Why do humans need sleep?,0,General,General,0.5456,True
+What is climate change?,0,General,General,0.5456,True
+What is the importance of clean drinking water?,0,General,General,0.5456,True
+What is the role of transportation in economic growth?,0,General,General,0.5456,True
+Why do people form communities?,0,General,General,0.5456,True
+What is the capital of India?,0,General,General,0.7425,True
+What is the largest ocean on Earth?,0,General,General,0.5456,True
+Who was the first President of India?,0,General,General,0.7425,True
+Which planet is known as the Red Planet?,0,General,General,0.5456,True
+What is the national animal of India?,0,General,General,0.7425,True
+Which continent is the Sahara Desert located in?,0,General,General,0.5456,True
+What gas do humans primarily need to breathe?,0,General,General,0.5456,True
+What is the tallest mountain in the world?,0,General,General,0.5456,True
+Which country is known as the Land of the Rising Sun?,0,General,General,0.5456,True
+How many days are there in a leap year?,0,General,SQL,0.6861,False
+What is the capital of India?,0,General,General,0.7425,True
+What is the largest ocean on Earth?,0,General,General,0.5456,True
+Who was the first President of India?,0,General,General,0.7425,True
+Which planet is known as the Red Planet?,0,General,General,0.5456,True
+What is the national animal of India?,0,General,General,0.7425,True
+Which continent is the Sahara Desert located in?,0,General,General,0.5456,True
+What gas do humans primarily need to breathe?,0,General,General,0.5456,True
+What is the tallest mountain in the world?,0,General,General,0.5456,True
+Which country is known as the Land of the Rising Sun?,0,General,General,0.5456,True
+How many days are there in a leap year?,0,General,SQL,0.6861,False
+What is feature engineering in machine learning?,0,General,General,0.877,True
+Why is feature engineering important for model performance?,0,General,General,0.8381,True
+What is the difference between a feature and a label?,0,General,General,0.7519,True
+"What is feature scaling, and why is it needed?",0,General,General,0.7273,True
+What is normalization vs standardization?,0,General,General,0.5456,True
+Why do we handle missing values before training a model?,0,General,General,0.783,True
+What is categorical encoding?,0,General,General,0.5456,True
+What is feature selection?,0,General,General,0.7273,True
+"What is overfitting, and how can feature engineering help reduce it?",0,General,General,0.839,True
+Why is domain knowledge important in feature engineering?,0,General,General,0.8272,True

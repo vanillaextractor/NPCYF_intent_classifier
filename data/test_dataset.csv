@@ -1,0 +1,201 @@
+text,label
+Why is the sky blue?,GENERAL_QUESTION
+Who discovered gravity?,GENERAL_QUESTION
+List all crops grown in Karnataka.,DATABASE_QUESTION
+What was the total rainfall in Visakhapatnam in 2008?,DATABASE_QUESTION
+Do you sleep?,GENERAL_QUESTION
+What was the highest temperature recorded in Ludhiana?,DATABASE_QUESTION
+Was there a drought in Bangalore in 2016?,DATABASE_QUESTION
+Hi,GENERAL_QUESTION
+What is the reservoir level of Patna?,DATABASE_QUESTION
+How much Cotton was produced in 2016?,DATABASE_QUESTION
+What is a black hole?,GENERAL_QUESTION
+List all crops grown in Kerala.,DATABASE_QUESTION
+List all crops grown in Punjab.,DATABASE_QUESTION
+I need advice.,GENERAL_QUESTION
+List all crops grown in Kerala.,DATABASE_QUESTION
+Did it rain in Lucknow on 13/5/2023?,DATABASE_QUESTION
+Why is the ocean salty?,GENERAL_QUESTION
+What was the highest temperature recorded in Bihar?,DATABASE_QUESTION
+Who is the founder of ISI?,GENERAL_QUESTION
+Do you like pizza?,GENERAL_QUESTION
+Good morning,GENERAL_QUESTION
+Compare rainfall between Gujarat and Andhra Pradesh in 2011.,DATABASE_QUESTION
+What was the highest temperature recorded in Patna?,DATABASE_QUESTION
+List all crops grown in West Bengal.,DATABASE_QUESTION
+I need advice.,GENERAL_QUESTION
+What is the minimum temperature in West Bengal?,DATABASE_QUESTION
+What matches are on today?,GENERAL_QUESTION
+What is the meaning of life?,GENERAL_QUESTION
+What was the total rainfall in Bhubaneswar in 2018?,DATABASE_QUESTION
+Was there a drought in West Bengal in 2008?,DATABASE_QUESTION
+What is the yield of Rice in Lucknow?,DATABASE_QUESTION
+Why is the ocean salty?,GENERAL_QUESTION
+Explain quantum physics.,GENERAL_QUESTION
+Was there a drought in Visakhapatnam in 2004?,DATABASE_QUESTION
+What is the best movie?,GENERAL_QUESTION
+Count of districts in Bihar.,DATABASE_QUESTION
+What is Python?,GENERAL_QUESTION
+What is the minimum temperature in Andhra Pradesh?,DATABASE_QUESTION
+What is a black hole?,GENERAL_QUESTION
+Count of districts in Odisha.,DATABASE_QUESTION
+Who won the world cup?,GENERAL_QUESTION
+Thanks,GENERAL_QUESTION
+Tell me a story.,GENERAL_QUESTION
+What is 2 + 2?,GENERAL_QUESTION
+What is 2 + 2?,GENERAL_QUESTION
+How's the weather today?,GENERAL_QUESTION
+When was ISI established?,GENERAL_QUESTION
+Was there a drought in Kerala in 2022?,DATABASE_QUESTION
+Do we have temperature data for Ludhiana?,DATABASE_QUESTION
+How much Sugarcane was produced in 2023?,DATABASE_QUESTION
+Was there a drought in Uttar Pradesh in 2014?,DATABASE_QUESTION
+Can you dance?,GENERAL_QUESTION
+Did it rain in Kolkata on 9/8/2020?,DATABASE_QUESTION
+Is this a chatbot?,GENERAL_QUESTION
+What is the minimum temperature in Gujarat?,DATABASE_QUESTION
+"What is the total rainfall for Uttar Pradesh in August, 2008?",DATABASE_QUESTION
+Did it rain in Kerala on 8/5/2009?,DATABASE_QUESTION
+What is your name?,GENERAL_QUESTION
+What is the minimum temperature in Ahmedabad?,DATABASE_QUESTION
+Find the maximum temperature of Lucknow in 2015.,DATABASE_QUESTION
+What is the yield of Potato in West Bengal?,DATABASE_QUESTION
+Find the maximum temperature of Karnataka in 2014.,DATABASE_QUESTION
+Do we have temperature data for Bhubaneswar?,DATABASE_QUESTION
+Tell me the humidity levels in Punjab.,DATABASE_QUESTION
+See you later,GENERAL_QUESTION
+What is the average rainfall in Patna?,DATABASE_QUESTION
+Count of districts in Punjab.,DATABASE_QUESTION
+Compare rainfall between West Bengal and Karnataka in 2021.,DATABASE_QUESTION
+What was the total rainfall in Lucknow in 2001?,DATABASE_QUESTION
+Count of districts in Andhra Pradesh.,DATABASE_QUESTION
+What is the average rainfall in Andhra Pradesh?,DATABASE_QUESTION
+What can you do?,GENERAL_QUESTION
+Show crop yields for 2015.,DATABASE_QUESTION
+How much Potato was produced in 2012?,DATABASE_QUESTION
+What is the best programming language?,GENERAL_QUESTION
+Did it rain in Patna on 15/2/2016?,DATABASE_QUESTION
+Compare rainfall between Gujarat and Andhra Pradesh in 2014.,DATABASE_QUESTION
+Who created you?,GENERAL_QUESTION
+When was ISI established?,GENERAL_QUESTION
+What is the minimum temperature in Bihar?,DATABASE_QUESTION
+Was there a drought in Lucknow in 2007?,DATABASE_QUESTION
+Find the maximum temperature of Ludhiana in 2013.,DATABASE_QUESTION
+Give me the area under Sugarcane cultivation in Ahmedabad.,DATABASE_QUESTION
+Who is the Prime Minister?,GENERAL_QUESTION
+Who discovered gravity?,GENERAL_QUESTION
+How to install pandas?,GENERAL_QUESTION
+See you later,GENERAL_QUESTION
+What is the best movie?,GENERAL_QUESTION
+Do we have temperature data for Thiruvananthapuram?,DATABASE_QUESTION
+What is the currency of Japan?,GENERAL_QUESTION
+What is AI?,GENERAL_QUESTION
+Tell me the humidity levels in Kolkata.,DATABASE_QUESTION
+How do airplanes fly?,GENERAL_QUESTION
+Where is Indian Statistical Institute?,GENERAL_QUESTION
+Show me the production of Cotton in Andhra Pradesh for 2011.,DATABASE_QUESTION
+Show me the production of Rice in Ludhiana for 2019.,DATABASE_QUESTION
+How many countries in the world?,GENERAL_QUESTION
+What is your favorite color?,GENERAL_QUESTION
+What was the highest temperature recorded in Ahmedabad?,DATABASE_QUESTION
+Who wrote Harry Potter?,GENERAL_QUESTION
+Find the maximum temperature of Lucknow in 2012.,DATABASE_QUESTION
+What is the meaning of life?,GENERAL_QUESTION
+Why is the sky blue?,GENERAL_QUESTION
+List all crops grown in Punjab.,DATABASE_QUESTION
+Find the maximum temperature of Ludhiana in 2017.,DATABASE_QUESTION
+Translate hello to Spanish.,GENERAL_QUESTION
+What is the meaning of life?,GENERAL_QUESTION
+Count of districts in Karnataka.,DATABASE_QUESTION
+What is the reservoir level of Karnataka?,DATABASE_QUESTION
+Show crop yields for 2004.,DATABASE_QUESTION
+Was there a drought in Karnataka in 2020?,DATABASE_QUESTION
+What is the average rainfall in Gujarat?,DATABASE_QUESTION
+How many countries in the world?,GENERAL_QUESTION
+What is the meaning of life?,GENERAL_QUESTION
+Do we have temperature data for Bhubaneswar?,DATABASE_QUESTION
+What is photosynthesis?,GENERAL_QUESTION
+What is the currency of Japan?,GENERAL_QUESTION
+What is the stock price of Apple?,GENERAL_QUESTION
+Give me the area under Cotton cultivation in Kerala.,DATABASE_QUESTION
+How many continents are there?,GENERAL_QUESTION
+When was ISI established?,GENERAL_QUESTION
+Tell me the humidity levels in West Bengal.,DATABASE_QUESTION
+Do we have temperature data for Gujarat?,DATABASE_QUESTION
+Where is Indian Statistical Institute?,GENERAL_QUESTION
+I am bored.,GENERAL_QUESTION
+"What is the total rainfall for Karnataka in December, 2001?",DATABASE_QUESTION
+What is the yield of Maize in Kolkata?,DATABASE_QUESTION
+Tell me a joke.,GENERAL_QUESTION
+Was there a drought in Visakhapatnam in 2001?,DATABASE_QUESTION
+Sing a song.,GENERAL_QUESTION
+What is the best programming language?,GENERAL_QUESTION
+What was the total rainfall in Ludhiana in 2013?,DATABASE_QUESTION
+Translate hello to Spanish.,GENERAL_QUESTION
+What is the population of Earth?,GENERAL_QUESTION
+How much Wheat was produced in 2017?,DATABASE_QUESTION
+Thanks,GENERAL_QUESTION
+What is the time now?,GENERAL_QUESTION
+What is the best programming language?,GENERAL_QUESTION
+Show me the production of Rice in Visakhapatnam for 2019.,DATABASE_QUESTION
+Sing a song.,GENERAL_QUESTION
+What is the smallest bird?,GENERAL_QUESTION
+You are helpful.,GENERAL_QUESTION
+What is your favorite color?,GENERAL_QUESTION
+Did it rain in Gujarat on 1/5/2023?,DATABASE_QUESTION
+Explain quantum physics.,GENERAL_QUESTION
+Who wrote Harry Potter?,GENERAL_QUESTION
+Tell me the humidity levels in Kolkata.,DATABASE_QUESTION
+What is the speed of light?,GENERAL_QUESTION
+What is the yield of Jute in Patna?,DATABASE_QUESTION
+Good morning,GENERAL_QUESTION
+Was there a drought in Uttar Pradesh in 2016?,DATABASE_QUESTION
+Compare rainfall between West Bengal and Punjab in 2012.,DATABASE_QUESTION
+Compare rainfall between Kerala and West Bengal in 2021.,DATABASE_QUESTION
+What is the yield of Jute in Uttar Pradesh?,DATABASE_QUESTION
+Bye,GENERAL_QUESTION
+Find the maximum temperature of Visakhapatnam in 2011.,DATABASE_QUESTION
+Show me the production of Jute in Thiruvananthapuram for 2001.,DATABASE_QUESTION
+What is the speed of light?,GENERAL_QUESTION
+Compare rainfall between Karnataka and Punjab in 2008.,DATABASE_QUESTION
+"What is the total rainfall for Bihar in June, 2023?",DATABASE_QUESTION
+Explain quantum physics.,GENERAL_QUESTION
+Do we have temperature data for Gujarat?,DATABASE_QUESTION
+What is the date today?,GENERAL_QUESTION
+Define machine learning.,GENERAL_QUESTION
+What was the highest temperature recorded in Punjab?,DATABASE_QUESTION
+What is ISI?,GENERAL_QUESTION
+Tell me the humidity levels in Uttar Pradesh.,DATABASE_QUESTION
+How are you?,GENERAL_QUESTION
+Suggest a song.,GENERAL_QUESTION
+Find the maximum temperature of Thiruvananthapuram in 2010.,DATABASE_QUESTION
+What is love?,GENERAL_QUESTION
+What is the reservoir level of Lucknow?,DATABASE_QUESTION
+Tell me the humidity levels in Gujarat.,DATABASE_QUESTION
+Show crop yields for 2009.,DATABASE_QUESTION
+Did it rain in Kerala on 20/7/2003?,DATABASE_QUESTION
+What is Python?,GENERAL_QUESTION
+Tell me a story.,GENERAL_QUESTION
+What is Python?,GENERAL_QUESTION
+What is AI?,GENERAL_QUESTION
+Is there any data for Rabi season in Thiruvananthapuram?,DATABASE_QUESTION
+Do you like pizza?,GENERAL_QUESTION
+What is the minimum temperature in Gujarat?,DATABASE_QUESTION
+Hi,GENERAL_QUESTION
+What is the color of the sky?,GENERAL_QUESTION
+What was the highest temperature recorded in West Bengal?,DATABASE_QUESTION
+Who wrote Harry Potter?,GENERAL_QUESTION
+What is your favorite color?,GENERAL_QUESTION
+Count of districts in Uttar Pradesh.,DATABASE_QUESTION
+What is your name?,GENERAL_QUESTION
+How do I cook rice?,GENERAL_QUESTION
+Tell me the humidity levels in Gujarat.,DATABASE_QUESTION
+Do you like pizza?,GENERAL_QUESTION
+Explain quantum physics.,GENERAL_QUESTION
+Give me the area under Sugarcane cultivation in Bangalore.,DATABASE_QUESTION
+Who is the president of USA?,GENERAL_QUESTION
+Thanks,GENERAL_QUESTION
+Is there any data for Summer season in Odisha?,DATABASE_QUESTION
+Hello,GENERAL_QUESTION
+What is the speed of light?,GENERAL_QUESTION
+Count of districts in Uttar Pradesh.,DATABASE_QUESTION

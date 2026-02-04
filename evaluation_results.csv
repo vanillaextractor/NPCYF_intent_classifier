@@ -1,0 +1,201 @@
+query,ground_truth_original,ground_truth,predicted,confidence,is_correct
+How are you?,GENERAL_QUESTION,General,General,0.5456,True
+Hi,GENERAL_QUESTION,General,General,0.5456,True
+Translate hello to Spanish.,GENERAL_QUESTION,General,General,0.5456,True
+What is AI?,GENERAL_QUESTION,General,General,0.5456,True
+How do I cook rice?,GENERAL_QUESTION,General,SQL,0.6325,False
+List all crops grown in Thiruvananthapuram.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+How old are you?,GENERAL_QUESTION,General,General,0.5456,True
+How do I cook rice?,GENERAL_QUESTION,General,SQL,0.6325,False
+Tell me a story.,GENERAL_QUESTION,General,General,0.7143,True
+What is the minimum temperature in Kerala?,DATABASE_QUESTION,SQL,SQL,0.782,True
+What is the reservoir level of Visakhapatnam?,DATABASE_QUESTION,SQL,General,0.5456,False
+What was the total rainfall in Lucknow in 2006?,DATABASE_QUESTION,SQL,SQL,0.6124,True
+Tell me a joke.,GENERAL_QUESTION,General,General,0.7143,True
+How much Sugarcane was produced in 2011?,DATABASE_QUESTION,SQL,SQL,0.7252,True
+Hello,GENERAL_QUESTION,General,General,0.5456,True
+What was the total rainfall in Bihar in 2016?,DATABASE_QUESTION,SQL,SQL,0.7085,True
+Give me the area under Maize cultivation in West Bengal.,DATABASE_QUESTION,SQL,SQL,0.7359,True
+You are helpful.,GENERAL_QUESTION,General,General,0.5456,True
+What is the yield of Rice in Bihar?,DATABASE_QUESTION,SQL,SQL,0.8209,True
+I am bored.,GENERAL_QUESTION,General,General,0.5456,True
+"What is the total rainfall for Bhubaneswar in July, 2011?",DATABASE_QUESTION,SQL,SQL,0.6786,True
+Show crop yields for 2013.,DATABASE_QUESTION,SQL,General,0.6045,False
+How to install pandas?,GENERAL_QUESTION,General,General,0.6765,True
+Give me the area under Cotton cultivation in Bhubaneswar.,DATABASE_QUESTION,SQL,SQL,0.5445,True
+Find the maximum temperature of Thiruvananthapuram in 2022.,DATABASE_QUESTION,SQL,SQL,0.7937,True
+Do you like pizza?,GENERAL_QUESTION,General,General,0.5456,True
+Show me the production of Sugarcane in Bihar for 2008.,DATABASE_QUESTION,SQL,SQL,0.7243,True
+What is the best programming language?,GENERAL_QUESTION,General,General,0.717,True
+"What is the total rainfall for Ludhiana in January, 2005?",DATABASE_QUESTION,SQL,SQL,0.6124,True
+Suggest a song.,GENERAL_QUESTION,General,General,0.5456,True
+List all crops grown in Ahmedabad.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+Why is the ocean salty?,GENERAL_QUESTION,General,General,0.5456,True
+What matches are on today?,GENERAL_QUESTION,General,General,0.5456,True
+Compare rainfall between Gujarat and Odisha in 2009.,DATABASE_QUESTION,SQL,SQL,0.6887,True
+What is the yield of Sugarcane in Visakhapatnam?,DATABASE_QUESTION,SQL,SQL,0.7461,True
+What is the yield of Sugarcane in Punjab?,DATABASE_QUESTION,SQL,SQL,0.751,True
+How much Maize was produced in 2014?,DATABASE_QUESTION,SQL,SQL,0.6619,True
+"What is the total rainfall for Lucknow in January, 2019?",DATABASE_QUESTION,SQL,SQL,0.6416,True
+Count of districts in Gujarat.,DATABASE_QUESTION,SQL,General,0.5456,False
+Did it rain in Bihar on 2/6/2022?,DATABASE_QUESTION,SQL,SQL,0.8628,True
+Where is Indian Statistical Institute?,GENERAL_QUESTION,General,General,0.7768,True
+I need advice.,GENERAL_QUESTION,General,General,0.5456,True
+Show crop yields for 2014.,DATABASE_QUESTION,SQL,General,0.5861,False
+How are you?,GENERAL_QUESTION,General,General,0.5456,True
+List all crops grown in Bihar.,DATABASE_QUESTION,SQL,SQL,0.7741,True
+Give me the area under Potato cultivation in West Bengal.,DATABASE_QUESTION,SQL,SQL,0.8208,True
+What is the yield of Maize in Andhra Pradesh?,DATABASE_QUESTION,SQL,SQL,0.828,True
+Find the maximum temperature of Kerala in 2014.,DATABASE_QUESTION,SQL,SQL,0.7711,True
+What is the minimum temperature in Kolkata?,DATABASE_QUESTION,SQL,SQL,0.782,True
+Show crop yields for 2019.,DATABASE_QUESTION,SQL,General,0.6171,False
+How do I cook rice?,GENERAL_QUESTION,General,SQL,0.6325,False
+What is AI?,GENERAL_QUESTION,General,General,0.5456,True
+List all crops grown in Karnataka.,DATABASE_QUESTION,SQL,SQL,0.7808,True
+What is the currency of Japan?,GENERAL_QUESTION,General,General,0.5456,True
+What is the speed of light?,GENERAL_QUESTION,General,SQL,0.601,False
+How to install pandas?,GENERAL_QUESTION,General,General,0.6765,True
+Find the maximum temperature of Kerala in 2016.,DATABASE_QUESTION,SQL,SQL,0.7724,True
+Who discovered gravity?,GENERAL_QUESTION,General,General,0.5456,True
+Show me the production of Jute in Andhra Pradesh for 2015.,DATABASE_QUESTION,SQL,SQL,0.7442,True
+Do you like pizza?,GENERAL_QUESTION,General,General,0.5456,True
+What is the reservoir level of Kolkata?,DATABASE_QUESTION,SQL,General,0.5456,False
+How much Cotton was produced in 2013?,DATABASE_QUESTION,SQL,SQL,0.6295,True
+What is the average rainfall in Thiruvananthapuram?,DATABASE_QUESTION,SQL,SQL,0.6796,True
+Who is the founder of ISI?,GENERAL_QUESTION,General,General,0.5456,True
+What is the population of Earth?,GENERAL_QUESTION,General,General,0.5456,True
+What is your favorite color?,GENERAL_QUESTION,General,General,0.5456,True
+Compare rainfall between Uttar Pradesh and Punjab in 2009.,DATABASE_QUESTION,SQL,SQL,0.8578,True
+Do you sleep?,GENERAL_QUESTION,General,General,0.5456,True
+What is the average rainfall in Kolkata?,DATABASE_QUESTION,SQL,SQL,0.6796,True
+What is the capital of India?,GENERAL_QUESTION,General,General,0.7425,True
+Translate hello to Spanish.,GENERAL_QUESTION,General,General,0.5456,True
+What is your name?,GENERAL_QUESTION,General,General,0.5456,True
+How to make coffee?,GENERAL_QUESTION,General,General,0.5456,True
+Find the maximum temperature of Kerala in 2012.,DATABASE_QUESTION,SQL,SQL,0.7613,True
+List all crops grown in Patna.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+Suggest a song.,GENERAL_QUESTION,General,General,0.5456,True
+What is the color of the sky?,GENERAL_QUESTION,General,General,0.5456,True
+What is the reservoir level of Ahmedabad?,DATABASE_QUESTION,SQL,General,0.5456,False
+Do we have temperature data for Patna?,DATABASE_QUESTION,SQL,SQL,0.7052,True
+Do we have temperature data for Kerala?,DATABASE_QUESTION,SQL,SQL,0.7052,True
+Did it rain in Bihar on 2/12/2003?,DATABASE_QUESTION,SQL,SQL,0.8422,True
+Tell me the humidity levels in Ahmedabad.,DATABASE_QUESTION,SQL,General,0.5312,False
+Show crop yields for 2016.,DATABASE_QUESTION,SQL,General,0.5888,False
+Do you sleep?,GENERAL_QUESTION,General,General,0.5456,True
+What is AI?,GENERAL_QUESTION,General,General,0.5456,True
+Who is the CEO of Google?,GENERAL_QUESTION,General,General,0.5456,True
+List all crops grown in Thiruvananthapuram.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+What was the total rainfall in Uttar Pradesh in 2021?,DATABASE_QUESTION,SQL,SQL,0.7762,True
+How's the weather today?,GENERAL_QUESTION,General,General,0.5456,True
+How's the weather today?,GENERAL_QUESTION,General,General,0.5456,True
+List all crops grown in Ludhiana.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+What is the yield of Jute in Uttar Pradesh?,DATABASE_QUESTION,SQL,SQL,0.9,True
+I need advice.,GENERAL_QUESTION,General,General,0.5456,True
+Can you dance?,GENERAL_QUESTION,General,General,0.5456,True
+What is the largest animal?,GENERAL_QUESTION,General,General,0.5456,True
+How much Rice was produced in 2015?,DATABASE_QUESTION,SQL,SQL,0.7157,True
+What is the average rainfall in Gujarat?,DATABASE_QUESTION,SQL,SQL,0.6796,True
+Did it rain in Uttar Pradesh on 9/9/2002?,DATABASE_QUESTION,SQL,SQL,0.8735,True
+What is 2 + 2?,GENERAL_QUESTION,General,General,0.5456,True
+List all crops grown in Visakhapatnam.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+What is the capital of India?,GENERAL_QUESTION,General,General,0.7425,True
+Did it rain in Patna on 28/5/2014?,DATABASE_QUESTION,SQL,SQL,0.8519,True
+List all crops grown in Kerala.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+How many countries in the world?,GENERAL_QUESTION,General,General,0.5456,True
+Suggest a song.,GENERAL_QUESTION,General,General,0.5456,True
+Show me the production of Potato in Kerala for 2010.,DATABASE_QUESTION,SQL,SQL,0.6979,True
+What is the stock price of Apple?,GENERAL_QUESTION,General,General,0.5456,True
+Is there any data for Zaid season in Lucknow?,DATABASE_QUESTION,SQL,SQL,0.6905,True
+Hi,GENERAL_QUESTION,General,General,0.5456,True
+Was there a drought in Andhra Pradesh in 2016?,DATABASE_QUESTION,SQL,SQL,0.6834,True
+Was there a drought in Odisha in 2011?,DATABASE_QUESTION,SQL,SQL,0.6208,True
+Tell me the humidity levels in Andhra Pradesh.,DATABASE_QUESTION,SQL,SQL,0.6277,True
+Tell me the humidity levels in Thiruvananthapuram.,DATABASE_QUESTION,SQL,General,0.5312,False
+When was ISI established?,GENERAL_QUESTION,General,General,0.5456,True
+How far is the moon?,GENERAL_QUESTION,General,General,0.5456,True
+What is photosynthesis?,GENERAL_QUESTION,General,General,0.5456,True
+List all crops grown in Punjab.,DATABASE_QUESTION,SQL,SQL,0.7395,True
+You are helpful.,GENERAL_QUESTION,General,General,0.5456,True
+Do we have temperature data for Kolkata?,DATABASE_QUESTION,SQL,SQL,0.7052,True
+Tell me a story.,GENERAL_QUESTION,General,General,0.7143,True
+What is the reservoir level of Lucknow?,DATABASE_QUESTION,SQL,General,0.5456,False
+Who is the Prime Minister?,GENERAL_QUESTION,General,General,0.5456,True
+How much Potato was produced in 2010?,DATABASE_QUESTION,SQL,SQL,0.6745,True
+What is the yield of Cotton in Thiruvananthapuram?,DATABASE_QUESTION,SQL,SQL,0.6592,True
+Tell me a joke.,GENERAL_QUESTION,General,General,0.7143,True
+What matches are on today?,GENERAL_QUESTION,General,General,0.5456,True
+Compare rainfall between Gujarat and West Bengal in 2017.,DATABASE_QUESTION,SQL,SQL,0.8182,True
+List all crops grown in Lucknow.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+Do you sleep?,GENERAL_QUESTION,General,General,0.5456,True
+Show crop yields for 2012.,DATABASE_QUESTION,SQL,General,0.5933,False
+Do you sleep?,GENERAL_QUESTION,General,General,0.5456,True
+What is the yield of Sugarcane in Patna?,DATABASE_QUESTION,SQL,SQL,0.7461,True
+Why is the sky blue?,GENERAL_QUESTION,General,General,0.5456,True
+Tell me the humidity levels in Kerala.,DATABASE_QUESTION,SQL,General,0.5312,False
+What matches are on today?,GENERAL_QUESTION,General,General,0.5456,True
+Was there a drought in Punjab in 2017?,DATABASE_QUESTION,SQL,SQL,0.6735,True
+How many countries in the world?,GENERAL_QUESTION,General,General,0.5456,True
+How are you?,GENERAL_QUESTION,General,General,0.5456,True
+How many continents are there?,GENERAL_QUESTION,General,General,0.5456,True
+Tell me the humidity levels in Karnataka.,DATABASE_QUESTION,SQL,SQL,0.622,True
+What is 2 + 2?,GENERAL_QUESTION,General,General,0.5456,True
+What is the meaning of life?,GENERAL_QUESTION,General,General,0.5456,True
+What is the minimum temperature in West Bengal?,DATABASE_QUESTION,SQL,SQL,0.8165,True
+Was there a drought in Patna in 2010?,DATABASE_QUESTION,SQL,SQL,0.5337,True
+What is the time now?,GENERAL_QUESTION,General,General,0.5456,True
+Do you sleep?,GENERAL_QUESTION,General,General,0.5456,True
+How are you?,GENERAL_QUESTION,General,General,0.5456,True
+What is the minimum temperature in Kerala?,DATABASE_QUESTION,SQL,SQL,0.782,True
+Who discovered gravity?,GENERAL_QUESTION,General,General,0.5456,True
+How many continents are there?,GENERAL_QUESTION,General,General,0.5456,True
+Who is the Prime Minister?,GENERAL_QUESTION,General,General,0.5456,True
+Tell me the humidity levels in Ludhiana.,DATABASE_QUESTION,SQL,General,0.5312,False
+Explain quantum physics.,GENERAL_QUESTION,General,General,0.8803,True
+How do I cook rice?,GENERAL_QUESTION,General,SQL,0.6325,False
+How many countries in the world?,GENERAL_QUESTION,General,General,0.5456,True
+What is the minimum temperature in Karnataka?,DATABASE_QUESTION,SQL,SQL,0.7647,True
+Who won the world cup?,GENERAL_QUESTION,General,General,0.5456,True
+How to make coffee?,GENERAL_QUESTION,General,General,0.5456,True
+What is the largest animal?,GENERAL_QUESTION,General,General,0.5456,True
+Show crop yields for 2012.,DATABASE_QUESTION,SQL,General,0.5933,False
+What was the total rainfall in West Bengal in 2003?,DATABASE_QUESTION,SQL,SQL,0.7873,True
+What is the best movie?,GENERAL_QUESTION,General,General,0.717,True
+Who is the CEO of Google?,GENERAL_QUESTION,General,General,0.5456,True
+Where do you live?,GENERAL_QUESTION,General,General,0.5456,True
+How do I cook rice?,GENERAL_QUESTION,General,SQL,0.6325,False
+How much Maize was produced in 2020?,DATABASE_QUESTION,SQL,SQL,0.687,True
+Find the maximum temperature of Kerala in 2003.,DATABASE_QUESTION,SQL,SQL,0.782,True
+What is the yield of Wheat in Bangalore?,DATABASE_QUESTION,SQL,SQL,0.7602,True
+How much Potato was produced in 2009?,DATABASE_QUESTION,SQL,SQL,0.716,True
+What is the reservoir level of Lucknow?,DATABASE_QUESTION,SQL,General,0.5456,False
+"What is the total rainfall for Odisha in December, 2009?",DATABASE_QUESTION,SQL,SQL,0.6124,True
+Hello,GENERAL_QUESTION,General,General,0.5456,True
+Did it rain in Uttar Pradesh on 11/11/2010?,DATABASE_QUESTION,SQL,SQL,0.8656,True
+Who created you?,GENERAL_QUESTION,General,General,0.5456,True
+What is the average rainfall in Lucknow?,DATABASE_QUESTION,SQL,SQL,0.6796,True
+How's the weather today?,GENERAL_QUESTION,General,General,0.5456,True
+Sing a song.,GENERAL_QUESTION,General,General,0.5456,True
+What is the minimum temperature in Visakhapatnam?,DATABASE_QUESTION,SQL,SQL,0.782,True
+Do you sleep?,GENERAL_QUESTION,General,General,0.5456,True
+What is photosynthesis?,GENERAL_QUESTION,General,General,0.5456,True
+What is the yield of Potato in Lucknow?,DATABASE_QUESTION,SQL,SQL,0.9068,True
+What is the currency of Japan?,GENERAL_QUESTION,General,General,0.5456,True
+Count of districts in Bihar.,DATABASE_QUESTION,SQL,SQL,0.7188,True
+Who is the Prime Minister?,GENERAL_QUESTION,General,General,0.5456,True
+What is ISI?,GENERAL_QUESTION,General,General,0.5456,True
+Hello,GENERAL_QUESTION,General,General,0.5456,True
+Was there a drought in West Bengal in 2005?,DATABASE_QUESTION,SQL,SQL,0.7654,True
+What is the best programming language?,GENERAL_QUESTION,General,General,0.717,True
+Count of districts in Karnataka.,DATABASE_QUESTION,SQL,SQL,0.7298,True
+Show crop yields for 2021.,DATABASE_QUESTION,SQL,General,0.6072,False
+What was the total rainfall in Uttar Pradesh in 2010?,DATABASE_QUESTION,SQL,SQL,0.7587,True
+List all crops grown in Odisha.,DATABASE_QUESTION,SQL,SQL,0.6659,True
+Show me the production of Maize in Odisha for 2013.,DATABASE_QUESTION,SQL,SQL,0.6651,True
+How many continents are there?,GENERAL_QUESTION,General,General,0.5456,True
+Why is the sky blue?,GENERAL_QUESTION,General,General,0.5456,True
+Show crop yields for 2014.,DATABASE_QUESTION,SQL,General,0.5861,False
+Is there any data for Zaid season in West Bengal?,DATABASE_QUESTION,SQL,SQL,0.8103,True
+Who wrote Harry Potter?,GENERAL_QUESTION,General,General,0.5456,True
+List all crops grown in Karnataka.,DATABASE_QUESTION,SQL,SQL,0.7808,True
+What is the date today?,GENERAL_QUESTION,General,General,0.5456,True

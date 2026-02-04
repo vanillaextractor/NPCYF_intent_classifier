@@ -1,0 +1,601 @@
+text,label
+Which state had the highest Soybean production in 2011?,1
+What is data augmentation?,0
+How much Rice was produced in Madhya Pradesh during Kharif season?,1
+Handling imbalanced data for classification,0
+List all climatic data for Madhya Pradesh where rainfall > 100mm,1
+Challenges faced by Indian farmers,0
+Give me the average rainfall in Karnataka for 2017,1
+Tell me about Indian agriculture,0
+Give me the average precipitation in Karnataka for 2011,1
+Data visualization with Matplotlib,0
+How much Jowar was produced in Maharashtra during Rabi season?,1
+What is a neural network?,0
+Did it rain in Maharashtra in 2019?,1
+Explain cross-validation on data,0
+Did it rain in Uttar Pradesh in 2022?,1
+Types of soil in India,0
+Show yield trend for Bajra,1
+Explain organic farming methods,0
+Which state had the highest Maize production in 2023?,1
+What is Green Revolution?,0
+Rice production data for Karnataka,1
+What is Green Revolution?,0
+What was the sowing area of Sugarcane in Madhya Pradesh in 2019?,1
+How to normalize data?,0
+Which state had the highest Sugarcane harvested area in 2021?,1
+What is dimensionality reduction?,0
+Max temperature in UP last year,1
+Types of soil in India,0
+What was the sowing area of Bajra in Maharashtra in 2014?,1
+What is feature engineering?,0
+Compare the sowing area of Sugarcane between Tamil Nadu and Tamil Nadu,1
+How to normalize data?,0
+What was the sowing area of Maize in Punjab in 2018?,1
+Handling imbalanced data for classification,0
+Find the Bajra yield for 2024,1
+Soil requirements for Wheat,0
+Give me the average humidity in Uttar Pradesh for 2015,1
+Tell me about Indian agriculture,0
+How much Soybean was produced in UP during Rabi season?,1
+Best practices for sustainable farming,0
+Show yield trend for Jowar,1
+Explain PCA,0
+Give me the average precipitation in Bihar for 2012,1
+Organic fertilizers for Maize,0
+How much Cotton was produced in Haryana during Zaid season?,1
+Explain the concept of overfitting,0
+List all climatic data for Punjab where temperature > 100mm,1
+Common diseases in Rice,0
+Give me the average temperature in West Bengal for 2015,1
+What is feature engineering?,0
+Did it rain in Bihar in 2016?,1
+What is Green Revolution?,0
+List all climatic data for Punjab where precipitation > 100mm,1
+What is Green Revolution?,0
+Did it rain in Uttar Pradesh in 2020?,1
+Explain the concept of overfitting,0
+Rice production data for UP,1
+What is feature engineering?,0
+Rice production data for Tamil Nadu,1
+Introduction to machine learning,0
+Show me the humidity data for Madhya Pradesh in 2014,1
+How to improve model accuracy?,0
+Did it rain in Madhya Pradesh in 2010?,1
+Explain cross-validation on data,0
+Show me the humidity data for Karnataka in 2020,1
+Best pesticides for Cotton,0
+How much Soybean was produced in UP during Zaid season?,1
+Explain organic farming methods,0
+How much Rice was produced in Karnataka during Zaid season?,1
+Handling imbalanced data for classification,0
+Give me the average rainfall in Karnataka for 2019,1
+Best practices for sustainable farming,0
+How much Rice was produced in West Bengal during Rabi season?,1
+What is data augmentation?,0
+How much Bajra was produced in UP during Kharif season?,1
+What is a neural network?,0
+Rice production data for Uttar Pradesh,1
+Handling imbalanced data for classification,0
+Show me the precipitation data for Haryana in 2022,1
+Challenges faced by Indian farmers,0
+List all climatic data for Karnataka where humidity > 100mm,1
+Types of soil in India,0
+What was the yield of Jowar in Bihar in 2024?,1
+Harvesting methods for Sugarcane,0
+Rice production data for Madhya Pradesh,1
+What is crop rotation?,0
+Which state had the highest Sugarcane sowing area in 2021?,1
+Soil requirements for Wheat,0
+Which state had the highest Cotton yield in 2020?,1
+Harvesting methods for Sugarcane,0
+Find the Sugarcane yield for 2015,1
+Explain cross-validation on data,0
+Show me the temperature data for Bihar in 2012,1
+Data visualization with Matplotlib,0
+Give me the average rainfall in Bihar for 2024,1
+Harvesting methods for Sugarcane,0
+Rice production data for Bihar,1
+Define precision and recall,0
+How much Rice was produced in Madhya Pradesh during Rabi season?,1
+Define precision and recall,0
+Show yield trend for Wheat,1
+What is the difference between supervised and unsupervised learning?,0
+Which state had the highest Sugarcane sowing area in 2014?,1
+What is a neural network?,0
+Did it rain in Maharashtra in 2010?,1
+What is data augmentation?,0
+Show yield trend for Cotton,1
+Data cleaning techniques in Python,0
+Max temperature in Bihar last year,1
+How to improve model accuracy?,0
+Did it rain in West Bengal in 2014?,1
+Common diseases in Rice,0
+Did it rain in Haryana in 2017?,1
+Common diseases in Rice,0
+Show yield trend for Jowar,1
+Soil requirements for Wheat,0
+Show me the precipitation data for Uttar Pradesh in 2024,1
+Tell me about Indian agriculture,0
+Which state had the highest Cotton production in 2010?,1
+Explain PCA,0
+Rice production data for Haryana,1
+What is crop rotation?,0
+Max temperature in Bihar last year,1
+How to handle missing data in pandas?,0
+Rice production data for UP,1
+How to handle missing data in pandas?,0
+Compare the yield of Jowar between Madhya Pradesh and Madhya Pradesh,1
+Explain PCA,0
+How much Bajra was produced in UP during Kharif season?,1
+Organic fertilizers for Maize,0
+Compare the sowing area of Soybean between Haryana and Haryana,1
+Organic fertilizers for Maize,0
+Compare the harvested area of Bajra between Maharashtra and Maharashtra,1
+What is deep learning?,0
+Max temperature in UP last year,1
+Challenges faced by Indian farmers,0
+Find the Bajra yield for 2020,1
+Harvesting methods for Sugarcane,0
+How much Bajra was produced in Punjab during Rabi season?,1
+Challenges faced by Indian farmers,0
+Did it rain in Maharashtra in 2011?,1
+What is crop rotation?,0
+List all climatic data for Haryana where humidity > 100mm,1
+Explain the concept of overfitting,0
+Did it rain in West Bengal in 2011?,1
+Types of soil in India,0
+Which state had the highest Rice yield in 2016?,1
+Explain organic farming methods,0
+Did it rain in Maharashtra in 2016?,1
+What is data augmentation?,0
+List all climatic data for West Bengal where wind speed > 100mm,1
+Explain cross-validation on data,0
+What was the production of Sugarcane in UP in 2024?,1
+What is crop rotation?,0
+Find the Jowar yield for 2012,1
+Handling imbalanced data for classification,0
+List all climatic data for West Bengal where temperature > 100mm,1
+Organic fertilizers for Maize,0
+Max temperature in Uttar Pradesh last year,1
+Harvesting methods for Sugarcane,0
+Find the Wheat yield for 2014,1
+How does a decision tree work?,0
+What was the harvested area of Wheat in Maharashtra in 2011?,1
+What is deep learning?,0
+Show yield trend for Wheat,1
+Explain Random Forest algorithm,0
+What was the sowing area of Wheat in Madhya Pradesh in 2022?,1
+How to improve model accuracy?,0
+How much Cotton was produced in Haryana during Kharif season?,1
+Explain the concept of overfitting,0
+How much Sugarcane was produced in Uttar Pradesh during Zaid season?,1
+Data visualization with Matplotlib,0
+What was the production of Bajra in Uttar Pradesh in 2024?,1
+Define precision and recall,0
+Did it rain in Haryana in 2019?,1
+How to normalize data?,0
+Show me the temperature data for Tamil Nadu in 2024,1
+Types of soil in India,0
+List all climatic data for Punjab where humidity > 100mm,1
+Data cleaning techniques in Python,0
+Did it rain in Madhya Pradesh in 2011?,1
+Organic fertilizers for Maize,0
+Compare the yield of Cotton between Karnataka and Karnataka,1
+Best practices for sustainable farming,0
+Give me the average wind speed in Bihar for 2014,1
+History of Cotton farming in India,0
+Find the Sugarcane yield for 2014,1
+What is a neural network?,0
+Did it rain in Bihar in 2021?,1
+How to handle missing data in pandas?,0
+List all climatic data for Haryana where precipitation > 100mm,1
+Handling imbalanced data for classification,0
+List all climatic data for Bihar where temperature > 100mm,1
+Define precision and recall,0
+Max temperature in West Bengal last year,1
+How to handle missing data in pandas?,0
+Max temperature in Uttar Pradesh last year,1
+What is the difference between supervised and unsupervised learning?,0
+Show me the humidity data for Maharashtra in 2020,1
+How to normalize data?,0
+Max temperature in Punjab last year,1
+What is the difference between supervised and unsupervised learning?,0
+Max temperature in Maharashtra last year,1
+History of Cotton farming in India,0
+Give me the average temperature in Karnataka for 2013,1
+History of Cotton farming in India,0
+Compare the production of Wheat between West Bengal and West Bengal,1
+Define precision and recall,0
+Did it rain in Haryana in 2012?,1
+Introduction to machine learning,0
+Show yield trend for Sugarcane,1
+Explain Random Forest algorithm,0
+Max temperature in Haryana last year,1
+What is deep learning?,0
+Show me the humidity data for Karnataka in 2019,1
+Organic fertilizers for Maize,0
+Show yield trend for Bajra,1
+Explain Random Forest algorithm,0
+Find the Rice yield for 2022,1
+What is crop rotation?,0
+List all climatic data for West Bengal where temperature > 100mm,1
+Explain organic farming methods,0
+Rice production data for Karnataka,1
+How to normalize data?,0
+Compare the sowing area of Sugarcane between Bihar and Bihar,1
+Organic fertilizers for Maize,0
+Give me the average precipitation in UP for 2022,1
+Explain Random Forest algorithm,0
+Which state had the highest Sugarcane harvested area in 2020?,1
+Soil requirements for Wheat,0
+What was the sowing area of Sugarcane in Maharashtra in 2012?,1
+Tell me about Indian agriculture,0
+Show yield trend for Jowar,1
+Explain Random Forest algorithm,0
+Did it rain in Karnataka in 2015?,1
+What is Green Revolution?,0
+Find the Jowar yield for 2016,1
+Challenges faced by Indian farmers,0
+Compare the harvested area of Bajra between UP and UP,1
+Tell me about Indian agriculture,0
+Find the Soybean yield for 2012,1
+Data cleaning techniques in Python,0
+Did it rain in Madhya Pradesh in 2012?,1
+Challenges faced by Indian farmers,0
+What was the yield of Sugarcane in Haryana in 2020?,1
+Explain organic farming methods,0
+Show yield trend for Soybean,1
+What is deep learning?,0
+How much Jowar was produced in West Bengal during Zaid season?,1
+What is data augmentation?,0
+Find the Jowar yield for 2022,1
+Handling imbalanced data for classification,0
+Did it rain in Maharashtra in 2015?,1
+Tell me about Indian agriculture,0
+Show me the precipitation data for Maharashtra in 2011,1
+Explain PCA,0
+Max temperature in Uttar Pradesh last year,1
+Explain cross-validation on data,0
+Compare the harvested area of Wheat between Madhya Pradesh and Madhya Pradesh,1
+Organic fertilizers for Maize,0
+Which state had the highest Sugarcane yield in 2024?,1
+Common diseases in Rice,0
+How much Rice was produced in West Bengal during Kharif season?,1
+Best practices for sustainable farming,0
+How much Soybean was produced in Punjab during Kharif season?,1
+Data cleaning techniques in Python,0
+Find the Bajra yield for 2016,1
+Explain the concept of overfitting,0
+Find the Bajra yield for 2012,1
+Explain PCA,0
+Max temperature in UP last year,1
+Explain organic farming methods,0
+List all climatic data for Maharashtra where precipitation > 100mm,1
+Explain Random Forest algorithm,0
+Compare the sowing area of Sugarcane between Punjab and Punjab,1
+What is Green Revolution?,0
+List all climatic data for Punjab where rainfall > 100mm,1
+How to normalize data?,0
+Compare the harvested area of Cotton between Madhya Pradesh and Madhya Pradesh,1
+Data visualization with Matplotlib,0
+Give me the average humidity in Haryana for 2018,1
+History of Cotton farming in India,0
+Find the Soybean yield for 2017,1
+Data visualization with Matplotlib,0
+Rice production data for Tamil Nadu,1
+Harvesting methods for Sugarcane,0
+Show yield trend for Cotton,1
+What is the difference between supervised and unsupervised learning?,0
+How much Sugarcane was produced in Maharashtra during Rabi season?,1
+Explain organic farming methods,0
+Show me the temperature data for West Bengal in 2016,1
+Harvesting methods for Sugarcane,0
+Max temperature in Bihar last year,1
+Types of soil in India,0
+Give me the average wind speed in Karnataka for 2014,1
+Harvesting methods for Sugarcane,0
+Compare the sowing area of Soybean between UP and UP,1
+Data cleaning techniques in Python,0
+List all climatic data for Punjab where humidity > 100mm,1
+What is crop rotation?,0
+Find the Wheat yield for 2023,1
+How to normalize data?,0
+Which state had the highest Sugarcane yield in 2019?,1
+Handling imbalanced data for classification,0
+Rice production data for Tamil Nadu,1
+Explain organic farming methods,0
+Rice production data for Maharashtra,1
+Data visualization with Matplotlib,0
+Did it rain in West Bengal in 2018?,1
+Explain Random Forest algorithm,0
+Which state had the highest Soybean sowing area in 2015?,1
+History of Cotton farming in India,0
+Give me the average humidity in Maharashtra for 2024,1
+Harvesting methods for Sugarcane,0
+Show yield trend for Soybean,1
+Explain cross-validation on data,0
+Give me the average rainfall in Maharashtra for 2024,1
+Common diseases in Rice,0
+Show me the precipitation data for UP in 2022,1
+Data visualization with Matplotlib,0
+Show me the wind speed data for Haryana in 2024,1
+What is feature engineering?,0
+Rice production data for Uttar Pradesh,1
+What is deep learning?,0
+Max temperature in Maharashtra last year,1
+Data cleaning techniques in Python,0
+Give me the average temperature in West Bengal for 2022,1
+Common diseases in Rice,0
+List all climatic data for Karnataka where rainfall > 100mm,1
+What is a neural network?,0
+Show yield trend for Sugarcane,1
+How to normalize data?,0
+Give me the average humidity in UP for 2013,1
+Explain Random Forest algorithm,0
+Find the Maize yield for 2014,1
+What is the difference between supervised and unsupervised learning?,0
+Give me the average precipitation in UP for 2017,1
+What is feature engineering?,0
+Did it rain in Haryana in 2012?,1
+What is a neural network?,0
+Give me the average precipitation in UP for 2016,1
+Best practices for sustainable farming,0
+Did it rain in Madhya Pradesh in 2013?,1
+Best practices for sustainable farming,0
+Compare the production of Rice between Maharashtra and Maharashtra,1
+What is a neural network?,0
+Max temperature in Haryana last year,1
+History of Cotton farming in India,0
+Did it rain in Tamil Nadu in 2023?,1
+Introduction to machine learning,0
+Did it rain in Karnataka in 2023?,1
+How to handle missing data in pandas?,0
+Which state had the highest Bajra harvested area in 2014?,1
+What is the difference between supervised and unsupervised learning?,0
+Compare the sowing area of Jowar between Tamil Nadu and Tamil Nadu,1
+Types of soil in India,0
+Which state had the highest Rice sowing area in 2021?,1
+Define precision and recall,0
+How much Jowar was produced in Uttar Pradesh during Kharif season?,1
+What is a neural network?,0
+Which state had the highest Sugarcane sowing area in 2013?,1
+How does a decision tree work?,0
+Did it rain in Maharashtra in 2011?,1
+Introduction to machine learning,0
+Did it rain in UP in 2018?,1
+Harvesting methods for Sugarcane,0
+Which state had the highest Cotton yield in 2014?,1
+What is Green Revolution?,0
+Max temperature in Uttar Pradesh last year,1
+What is dimensionality reduction?,0
+Find the Wheat yield for 2012,1
+Best practices for sustainable farming,0
+Show me the temperature data for Bihar in 2016,1
+Harvesting methods for Sugarcane,0
+Did it rain in Karnataka in 2021?,1
+Define precision and recall,0
+Which state had the highest Bajra yield in 2023?,1
+Explain PCA,0
+Show me the precipitation data for Karnataka in 2022,1
+Explain PCA,0
+Find the Sugarcane yield for 2016,1
+Types of soil in India,0
+What was the yield of Wheat in Karnataka in 2017?,1
+What is a neural network?,0
+Find the Sugarcane yield for 2011,1
+What is the difference between supervised and unsupervised learning?,0
+List all climatic data for Tamil Nadu where wind speed > 100mm,1
+What is Green Revolution?,0
+Find the Bajra yield for 2011,1
+Challenges faced by Indian farmers,0
+Compare the harvested area of Bajra between Haryana and Haryana,1
+Soil requirements for Wheat,0
+Did it rain in Tamil Nadu in 2019?,1
+Soil requirements for Wheat,0
+Give me the average precipitation in West Bengal for 2021,1
+What is feature engineering?,0
+Compare the yield of Rice between Tamil Nadu and Tamil Nadu,1
+Data visualization with Matplotlib,0
+Which state had the highest Maize yield in 2016?,1
+Soil requirements for Wheat,0
+Compare the production of Bajra between Madhya Pradesh and Madhya Pradesh,1
+How to handle missing data in pandas?,0
+What was the yield of Bajra in Bihar in 2021?,1
+What is a neural network?,0
+Give me the average humidity in Haryana for 2018,1
+Tell me about Indian agriculture,0
+Give me the average wind speed in Uttar Pradesh for 2013,1
+Data visualization with Matplotlib,0
+Max temperature in West Bengal last year,1
+What is dimensionality reduction?,0
+List all climatic data for UP where wind speed > 100mm,1
+What is the difference between supervised and unsupervised learning?,0
+Max temperature in Bihar last year,1
+What is data augmentation?,0
+Which state had the highest Jowar production in 2017?,1
+Tell me about Indian agriculture,0
+Compare the yield of Cotton between Bihar and Bihar,1
+Handling imbalanced data for classification,0
+Did it rain in Haryana in 2022?,1
+What is dimensionality reduction?,0
+Which state had the highest Jowar harvested area in 2013?,1
+Tell me about Indian agriculture,0
+How much Rice was produced in Haryana during Rabi season?,1
+Handling imbalanced data for classification,0
+How much Wheat was produced in UP during Rabi season?,1
+Tell me about Indian agriculture,0
+Rice production data for Madhya Pradesh,1
+How does a decision tree work?,0
+What was the sowing area of Wheat in Maharashtra in 2023?,1
+What is feature engineering?,0
+Compare the production of Wheat between Madhya Pradesh and Madhya Pradesh,1
+Introduction to machine learning,0
+Max temperature in Tamil Nadu last year,1
+Common diseases in Rice,0
+Compare the production of Cotton between Tamil Nadu and Tamil Nadu,1
+Best practices for sustainable farming,0
+Find the Rice yield for 2012,1
+Common diseases in Rice,0
+How much Wheat was produced in Maharashtra during Zaid season?,1
+Introduction to machine learning,0
+Give me the average wind speed in Maharashtra for 2010,1
+What is a neural network?,0
+Give me the average wind speed in Maharashtra for 2021,1
+What is Green Revolution?,0
+List all climatic data for Bihar where humidity > 100mm,1
+Organic fertilizers for Maize,0
+Max temperature in UP last year,1
+What is Green Revolution?,0
+Which state had the highest Sugarcane yield in 2019?,1
+How to normalize data?,0
+List all climatic data for Madhya Pradesh where wind speed > 100mm,1
+What is deep learning?,0
+List all climatic data for Karnataka where rainfall > 100mm,1
+Data visualization with Matplotlib,0
+Show me the rainfall data for UP in 2020,1
+Explain Random Forest algorithm,0
+List all climatic data for Punjab where humidity > 100mm,1
+Explain the concept of overfitting,0
+Compare the yield of Wheat between Haryana and Haryana,1
+Explain PCA,0
+What was the production of Bajra in Uttar Pradesh in 2021?,1
+Explain cross-validation on data,0
+Did it rain in West Bengal in 2023?,1
+What is crop rotation?,0
+Compare the yield of Sugarcane between Tamil Nadu and Tamil Nadu,1
+Introduction to machine learning,0
+Find the Sugarcane yield for 2021,1
+Explain organic farming methods,0
+Show yield trend for Jowar,1
+What is Green Revolution?,0
+Which state had the highest Jowar production in 2016?,1
+Challenges faced by Indian farmers,0
+List all climatic data for Bihar where precipitation > 100mm,1
+Data visualization with Matplotlib,0
+Show me the wind speed data for Uttar Pradesh in 2018,1
+Explain Random Forest algorithm,0
+Find the Sugarcane yield for 2022,1
+Introduction to machine learning,0
+Find the Soybean yield for 2013,1
+What is crop rotation?,0
+Compare the yield of Wheat between Madhya Pradesh and Madhya Pradesh,1
+Handling imbalanced data for classification,0
+Show yield trend for Jowar,1
+What is dimensionality reduction?,0
+How much Sugarcane was produced in Maharashtra during Rabi season?,1
+Explain PCA,0
+Show me the temperature data for Punjab in 2011,1
+Explain Random Forest algorithm,0
+Show me the temperature data for Madhya Pradesh in 2013,1
+History of Cotton farming in India,0
+Show yield trend for Wheat,1
+Define precision and recall,0
+Rice production data for Karnataka,1
+Tell me about Indian agriculture,0
+Find the Bajra yield for 2023,1
+How to handle missing data in pandas?,0
+How much Soybean was produced in Bihar during Rabi season?,1
+What is feature engineering?,0
+Did it rain in Punjab in 2020?,1
+Best pesticides for Cotton,0
+Show yield trend for Bajra,1
+What is feature engineering?,0
+How much Jowar was produced in West Bengal during Zaid season?,1
+Best pesticides for Cotton,0
+Find the Rice yield for 2020,1
+Organic fertilizers for Maize,0
+Show yield trend for Rice,1
+History of Cotton farming in India,0
+Max temperature in Bihar last year,1
+Soil requirements for Wheat,0
+Rice production data for Uttar Pradesh,1
+Tell me about Indian agriculture,0
+Compare the production of Soybean between Maharashtra and Maharashtra,1
+What is the difference between supervised and unsupervised learning?,0
+Show me the temperature data for Madhya Pradesh in 2020,1
+History of Cotton farming in India,0
+Which state had the highest Jowar harvested area in 2022?,1
+What is crop rotation?,0
+Rice production data for Haryana,1
+What is crop rotation?,0
+Rice production data for Karnataka,1
+Explain the concept of overfitting,0
+Show me the rainfall data for Tamil Nadu in 2015,1
+What is feature engineering?,0
+List all climatic data for Tamil Nadu where precipitation > 100mm,1
+What is the difference between supervised and unsupervised learning?,0
+Which state had the highest Soybean harvested area in 2024?,1
+Challenges faced by Indian farmers,0
+How much Soybean was produced in West Bengal during Zaid season?,1
+Tell me about Indian agriculture,0
+Did it rain in West Bengal in 2022?,1
+Harvesting methods for Sugarcane,0
+Max temperature in Tamil Nadu last year,1
+Best pesticides for Cotton,0
+Max temperature in Punjab last year,1
+Explain organic farming methods,0
+Give me the average wind speed in Haryana for 2018,1
+Types of soil in India,0
+Find the Bajra yield for 2017,1
+How to improve model accuracy?,0
+List all climatic data for Maharashtra where rainfall > 100mm,1
+What is Green Revolution?,0
+Rice production data for Punjab,1
+History of Cotton farming in India,0
+What was the harvested area of Soybean in Bihar in 2021?,1
+Explain Random Forest algorithm,0
+Max temperature in Madhya Pradesh last year,1
+How to handle missing data in pandas?,0
+Compare the yield of Rice between West Bengal and West Bengal,1
+How to improve model accuracy?,0
+Show me the rainfall data for Karnataka in 2010,1
+How does a decision tree work?,0
+Show me the wind speed data for Maharashtra in 2022,1
+Challenges faced by Indian farmers,0
+Find the Bajra yield for 2017,1
+How does a decision tree work?,0
+Show me the precipitation data for West Bengal in 2015,1
+What is crop rotation?,0
+Which state had the highest Sugarcane production in 2020?,1
+How to normalize data?,0
+Rice production data for Madhya Pradesh,1
+What is crop rotation?,0
+Show yield trend for Sugarcane,1
+How to normalize data?,0
+Give me the average humidity in Haryana for 2024,1
+Explain the concept of overfitting,0
+List all climatic data for West Bengal where temperature > 100mm,1
+Soil requirements for Wheat,0
+Show me the precipitation data for Karnataka in 2018,1
+Explain the concept of overfitting,0
+Which state had the highest Soybean harvested area in 2011?,1
+How to improve model accuracy?,0
+What was the yield of Wheat in Madhya Pradesh in 2016?,1
+Explain the concept of overfitting,0
+Which state had the highest Maize sowing area in 2024?,1
+Handling imbalanced data for classification,0
+Max temperature in Karnataka last year,1
+Handling imbalanced data for classification,0
+Show yield trend for Rice,1
+Explain cross-validation on data,0
+Compare the sowing area of Rice between Madhya Pradesh and Madhya Pradesh,1
+How to improve model accuracy?,0
+Show me the precipitation data for Karnataka in 2014,1
+How to handle missing data in pandas?,0
+List all climatic data for West Bengal where humidity > 100mm,1
+How does a decision tree work?,0
+Did it rain in Haryana in 2010?,1
+Handling imbalanced data for classification,0
+Did it rain in Madhya Pradesh in 2014?,1
+Tell me about Indian agriculture,0
+Rice production data for Karnataka,1
+How does a decision tree work?,0
+What was the yield of Soybean in Haryana in 2020?,1
+What is the difference between supervised and unsupervised learning?,0
+List all climatic data for Bihar where temperature > 100mm,1
+Handling imbalanced data for classification,0
+Give me the average temperature in UP for 2015,1
+How to improve model accuracy?,0
+What was the yield of Sugarcane in Madhya Pradesh in 2021?,1
+Explain PCA,0
