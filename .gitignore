@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 general_model.gguf
 sql_model.gguf
+extract_pdf_text.py
