@@ -1,5 +1,5 @@
-scikit-learn
-psycopg2-binary
-llama-cpp-python
-numpy
+scikit-learn==1.8.0
+psycopg2-binary==2.9.11
+llama-cpp-python==0.3.16
+numpy==2.4.2
 
