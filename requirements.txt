@@ -1,4 +1,5 @@
-pandas
 scikit-learn
 psycopg2-binary
+llama-cpp-python
+numpy
 
