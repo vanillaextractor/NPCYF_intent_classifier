@@ -391,14 +391,15 @@ History:
                             elif len(rows) == 1 and (rows[0][0] is None):
                                 param_is_empty = True
 
-                            # --- FRESH PROMPT RETRY STRATEGY ---
-                            # Instead of appending to history (which traps the model), we use a fresh "Repair" prompt.
-                            print("🔄 Generating Retry Prompt...")
-                            
-                            # Pre-calculate the error message variable to avoid f-string collision with regex/json braces
-                            likely_entity = "State" if "state_name" in sql_query else "District"
-                            
-                            repair_system_prompt = f"""<|im_start|>system
+                            if param_is_empty:
+                                # --- FRESH PROMPT RETRY STRATEGY ---
+                                # Instead of appending to history (which traps the model), we use a fresh "Repair" prompt.
+                                print("🔄 Generating Retry Prompt...")
+                                
+                                # Pre-calculate the error message variable to avoid f-string collision with regex/json braces
+                                likely_entity = "State" if "state_name" in sql_query else "District"
+                                
+                                repair_system_prompt = f"""<|im_start|>system
 You are a SQL Repair Agent.
 The user's previous query returned 0 results because it likely checked the WRONG Location Table (State vs District).
 
@@ -426,28 +427,28 @@ TASK: Rewrite the query to check the OTHER table.
 <|im_start|>assistant
 ```sql
 """
-                            # Use format with the properly escaped string
-                            formatted_retry_prompt = repair_system_prompt.format(sql_query=sql_query)
-                            
-                            # Debug print (optional)
-                            # print(f"DEBUG RETRY PROMPT:\n{formatted_retry_prompt}")
-
-                            output_retry = sql_llm(
-                                formatted_retry_prompt, 
-                                max_tokens=256, 
-                                stop=["```", "<|im_end|>"], 
-                                echo=False,
-                                temperature=0.1
-                            )
-                            retry_sql = output_retry['choices'][0]['text'].strip()
-                            print(f"🔄 Retry SQL: {retry_sql}")
-                            
-                            # Fix and Execute Retry
-                            fixed_retry_sql = fix_generated_sql(retry_sql)
-                            if fixed_retry_sql != retry_sql:
-                                print(f"🔧 Fixed Retry SQL: {fixed_retry_sql}")
+                                # Use format with the properly escaped string
+                                formatted_retry_prompt = repair_system_prompt.format(sql_query=sql_query)
                                 
-                            execute_sql_query(fixed_retry_sql, db_config)
+                                # Debug print (optional)
+                                # print(f"DEBUG RETRY PROMPT:\n{formatted_retry_prompt}")
+
+                                output_retry = sql_llm(
+                                    formatted_retry_prompt, 
+                                    max_tokens=256, 
+                                    stop=["```", "<|im_end|>"], 
+                                    echo=False,
+                                    temperature=0.1
+                                )
+                                retry_sql = output_retry['choices'][0]['text'].strip()
+                                print(f"🔄 Retry SQL: {retry_sql}")
+                                
+                                # Fix and Execute Retry
+                                fixed_retry_sql = fix_generated_sql(retry_sql)
+                                if fixed_retry_sql != retry_sql:
+                                    print(f"🔧 Fixed Retry SQL: {fixed_retry_sql}")
+                                    
+                                execute_sql_query(fixed_retry_sql, db_config)
                             
                     except Exception as e:
                        print(f"⚠️ Failed to execute SQL: {e}")
