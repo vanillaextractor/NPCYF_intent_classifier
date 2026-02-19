@@ -1,0 +1,22 @@
+{
+  "models": {
+    "general": {
+      "path": "models/general_model.gguf",
+      "n_ctx": 2048,
+      "n_gpu_layers": -1,
+      "chat_template": "llama-3"
+    },
+    "sql": {
+      "path": "models/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+      "n_ctx": 8192,
+      "n_gpu_layers": -1,
+      "chat_template": "chatml"
+    },
+    "intent_classifier": {
+      "path": "models/intent_model_multiclass.pkl"
+    }
+  },
+  "paths": {
+    "schema": "resourcesfortrainingtheintentclassifier/Database Schema.sql"
+  }
+}
