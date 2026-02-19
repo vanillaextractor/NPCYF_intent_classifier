@@ -1,0 +1,225 @@
+[
+  {
+    "question": "List all active features from FEATURE_MASTER?",
+    "sql": "SELECT feature_id, feature_title, feature_description, feature_data_category, feature_temporal_interval, feature_location_level FROM npcyf_schema.\"FEATURE_MASTER\" WHERE feature_is_active = TRUE;"
+  },
+  {
+    "question": "What are the feature_data_category values available?",
+    "sql": "SELECT DISTINCT feature_data_category FROM npcyf_schema.\"FEATURE_MASTER\";"
+  },
+  {
+    "question": "How many features exist in each training_feature_set?",
+    "sql": "SELECT tfs.training_feature_set_id, tfs.training_feature_set_title, COUNT(tfsf.feature_id) AS total_features FROM npcyf_schema.\"TRAINING_FEATURE_SET\" AS tfs JOIN npcyf_schema.\"TRAINING_FEATURE_SET_FEATURE\" AS tfsf ON tfs.training_feature_set_id = tfsf.training_feature_set_id GROUP BY tfs.training_feature_set_id, tfs.training_feature_set_title ORDER BY tfs.training_feature_set_id;"
+  },
+  {
+    "question": "Which features are marked as target variables?",
+    "sql": "SELECT fm.feature_id, fm.feature_title FROM npcyf_schema.\"TRAINING_FEATURE_SET_FEATURE\" AS tfsf JOIN npcyf_schema.\"FEATURE_MASTER\" AS fm ON fm.feature_id = tfsf.feature_id WHERE tfsf.is_feature_target = TRUE;"
+  },
+  {
+    "question": "Show feature_title and feature_temporal_interval?",
+    "sql": "SELECT feature_title, feature_temporal_interval FROM npcyf_schema.\"FEATURE_MASTER\";"
+  },
+  {
+    "question": "What crops are included in each training_feature_set_data?",
+    "sql": "SELECT training_feature_set_data_id, training_feature_set_data_title, training_feature_set_data_crops FROM npcyf_schema.\"TRAINING_FEATURE_SET_DATA\";"
+  }
+]
+
+
+[
+  {
+    "question": "Which state has the maximum number of districts in the database?",
+    "sql": "SELECT s.state_name, COUNT(d.district_id) AS total_districts FROM npcyf_schema.\"STATE\" AS s JOIN npcyf_schema.\"DISTRICT\" AS d ON s.state_id = d.state_id GROUP BY s.state_name ORDER BY total_districts DESC LIMIT 1;"
+  },
+  {
+    "question": "Which state has the minimum number of districts in the database?",
+    "sql": "SELECT s.state_name, COUNT(d.district_id) AS total_districts FROM npcyf_schema.\"STATE\" AS s JOIN npcyf_schema.\"DISTRICT\" AS d ON s.state_id = d.state_id GROUP BY s.state_name ORDER BY total_districts ASC LIMIT 1;"
+  }
+]
+[
+  {
+    "question": "How many districts exist in Bihar?",
+    "sql": "SELECT COUNT(d.district_id) AS total_districts_in_bihar\nFROM npcyf_schema.\"DISTRICT\" AS d\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE s.state_name ILIKE '%Bihar%';"
+  }
+]
+
+[
+  {
+    "question": "What seasons are available in the database?",
+    "query": "SELECT season_name FROM npcyf_schema.\"SEASON\";"
+  },
+  {
+    "question": "What is the season_start and season_end for each season?",
+    "query": "SELECT season_name, season_start, season_end FROM npcyf_schema.\"SEASON\";"
+  },
+  {
+    "question": "Which season starts in a specific date range?",
+    "query": "SELECT season_name FROM npcyf_schema.\"SEASON\" WHERE season_start BETWEEN DATE '2000-01-01' AND DATE '2000-12-31';"
+  },
+  {
+    "question": "How many seasons are stored in the SEASON table?",
+    "query": "SELECT COUNT(*) AS total_seasons FROM npcyf_schema.\"SEASON\";"
+  },
+  {
+    "question": "List all season names ordered alphabetically?",
+    "query": "SELECT season_name FROM npcyf_schema.\"SEASON\" ORDER BY season_name ASC;"
+  },
+  {
+    "question": "List all states with their latitude and longitude?",
+    "query": "SELECT state_name, state_latitude, state_longitude FROM npcyf_schema.\"STATE\";"
+  },
+  {
+    "question": "What is the area of each state?",
+    "query": "SELECT state_name, state_area FROM npcyf_schema.\"STATE\";"
+  },
+  {
+    "question": "List all districts belonging to Bihar?",
+    "query": "SELECT d.district_name FROM npcyf_schema.\"DISTRICT\" AS d JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE s.state_name ILIKE '%Bihar%';"
+  },
+  {
+    "question": "How many districts exist per state?",
+    "query": "SELECT s.state_name, COUNT(d.district_id) AS total_districts FROM npcyf_schema.\"DISTRICT\" AS d JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id GROUP BY s.state_name ORDER BY s.state_name;"
+  },
+  {
+    "question": "Show district_name along with state_name?",
+    "query": "SELECT d.district_name, s.state_name FROM npcyf_schema.\"DISTRICT\" AS d JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id;"
+  }
+]
+[
+  {
+    "question": "What is the average reservoir level of Bihar in 2015?",
+    "query": "SELECT AVG(l.level)\nFROM npcyf_schema.\"LOCATION_RESERVOIR_LEVEL\" AS l\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = l.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE l.location_type = 'DISTRICT'\n  AND s.state_name ILIKE '%Bihar%'\n  AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2015;"
+  },
+  {
+    "question": "Find the maximum FRL recorded in Kerala in 2020?",
+    "query": "SELECT MAX(l.frl)\nFROM npcyf_schema.\"LOCATION_RESERVOIR_LEVEL\" AS l\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = l.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE l.location_type = 'DISTRICT'\n  AND s.state_name ILIKE '%Kerala%'\n  AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2020;"
+  },
+  {
+    "question": "What is the total current_live_storage of Odisha in 2018?",
+    "query": "SELECT SUM(l.current_live_storage)\nFROM npcyf_schema.\"LOCATION_RESERVOIR_LEVEL\" AS l\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = l.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE l.location_type = 'DISTRICT'\n  AND s.state_name ILIKE '%Odisha%'\n  AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2018;"
+  },
+  {
+    "question": "Which state has the highest reservoir level in 2010?",
+    "query": "SELECT s.state_name, MAX(l.level) AS max_level\nFROM npcyf_schema.\"LOCATION_RESERVOIR_LEVEL\" AS l\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = l.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE l.location_type = 'DISTRICT'\n  AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2010\nGROUP BY s.state_name\nORDER BY max_level DESC\nLIMIT 1;"
+  },
+  {
+    "question": "Show reservoir levels grouped by reservoir_level_recorded_year?",
+    "query": "SELECT EXTRACT(YEAR FROM l.reservoir_level_recorded_date) AS year, AVG(l.level) AS avg_level\nFROM npcyf_schema.\"LOCATION_RESERVOIR_LEVEL\" AS l\nGROUP BY year\nORDER BY year;"
+  },
+  {
+    "question": "What is the average reservoir level at DISTRICT level in 2016?",
+    "query": "SELECT AVG(l.level)\nFROM npcyf_schema.\"LOCATION_RESERVOIR_LEVEL\" AS l\nWHERE l.location_type = 'DISTRICT'\n  AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2016;"
+  },
+  {
+    "question": "List reservoir levels recorded on a specific reservoir_level_recorded_date?",
+    "query": "SELECT l.level\nFROM npcyf_schema.\"LOCATION_RESERVOIR_LEVEL\" AS l\nWHERE l.reservoir_level_recorded_date = DATE '2010-01-01';"
+  },
+  {
+    "question": "Is wheat present in the crop table?",
+    "query": "SELECT EXISTS (\n  SELECT 1\n  FROM npcyf_schema.\"CROP\"\n  WHERE crop_name ILIKE '%wheat%'\n);"
+  },
+  {
+    "question": "List all crop names available in the database?",
+    "query": "SELECT crop_name\nFROM npcyf_schema.\"CROP\";"
+  },
+  {
+    "question": "How many crops exist in the CROP table?",
+    "query": "SELECT COUNT(*) AS total_crops\nFROM npcyf_schema.\"CROP\";"
+  },
+  {
+    "question": "What is the crop_id of rice?",
+    "query": "SELECT crop_id\nFROM npcyf_schema.\"CROP\"\nWHERE crop_name ILIKE '%rice%';"
+  },
+  {
+    "question": "Show all crops ordered by crop_name?",
+    "query": "SELECT *\nFROM npcyf_schema.\"CROP\"\nORDER BY crop_name;"
+  }
+]
+[
+  {
+    "question": "What is the maximum temperature of West Bengal in 2000?",
+    "query": "SELECT MAX(t.temperature_value)\nFROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = t.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE t.location_type = 'DISTRICT'\n  AND s.state_name ILIKE '%West Bengal%'\n  AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2000;"
+  },
+  {
+    "question": "Find the average temperature of Bihar in 2010?",
+    "query": "SELECT AVG(t.temperature_value)\nFROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = t.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE t.location_type = 'DISTRICT'\n  AND s.state_name ILIKE '%Bihar%'\n  AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2010;"
+  },
+  {
+    "question": "What is the minimum temperature recorded in Kerala in 2015?",
+    "query": "SELECT MIN(t.temperature_value)\nFROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = t.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE t.location_type = 'DISTRICT'\n  AND s.state_name ILIKE '%Kerala%'\n  AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2015;"
+  },
+  {
+    "question": "Show yearly temperature values for Odisha?",
+    "query": "SELECT EXTRACT(YEAR FROM t.temperature_recorded_date) AS year,\n       AVG(t.temperature_value) AS avg_temperature\nFROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = t.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE t.location_type = 'DISTRICT'\n  AND s.state_name ILIKE '%Odisha%'\nGROUP BY year\nORDER BY year;"
+  },
+  {
+    "question": "What is the average temperature recorded at STATE level in 2020?",
+    "query": "SELECT AVG(t.temperature_value)\nFROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t\nWHERE t.location_type = 'STATE'\n  AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2020;"
+  },
+  {
+    "question": "What is the maximum temperature recorded at DISTRICT level in 2018?",
+    "query": "SELECT MAX(t.temperature_value)\nFROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t\nWHERE t.location_type = 'DISTRICT'\n  AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2018;"
+  },
+  {
+    "question": "Which state recorded the highest temperature in 2012?",
+    "query": "SELECT s.state_name,\n       MAX(t.temperature_value) AS max_temperature\nFROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t\nJOIN npcyf_schema.\"DISTRICT\" AS d\n  ON d.district_id = t.location_id\nJOIN npcyf_schema.\"STATE\" AS s\n  ON s.state_id = d.state_id\nWHERE t.location_type = 'DISTRICT'\n  AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2012\nGROUP BY s.state_name\nORDER BY max_temperature DESC\nLIMIT 1;"
+  },
+  {
+    "question": "What temperature values belong to a given temperature_data_collection_id?",
+    "query": "SELECT t.temperature_value\nFROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t\nWHERE t.temperature_data_collection_id = 1;"
+  }
+]
+[
+  {
+    "question": "What is the total rainfall of Bihar in the year 2010?",
+    "sql": "SELECT SUM(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = l.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2010;"
+  },
+  {
+    "question": "What is the average rainfall of West Bengal in 2005?",
+    "sql": "SELECT AVG(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = l.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%West Bengal%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2005;"
+  },
+  {
+    "question": "Find the maximum rainfall recorded for Odisha in 2020?",
+    "sql": "SELECT MAX(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = l.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Odisha%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2020;"
+  },
+  {
+    "question": "What is the minimum rainfall recorded in Kerala in 2015?",
+    "sql": "SELECT MIN(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = l.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Kerala%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2015;"
+  },
+  {
+    "question": "Show the yearly rainfall of Bihar between 2000 and 2010?",
+    "sql": "SELECT EXTRACT(YEAR FROM l.rainfall_recorded_date) AS year, SUM(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = l.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) BETWEEN 2000 AND 2010 GROUP BY year ORDER BY year;"
+  },
+  {
+    "question": "What is the total rainfall recorded at STATE level in 2012?",
+    "sql": "SELECT SUM(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = l.location_id WHERE l.location_type = 'STATE' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2012;"
+  },
+  {
+    "question": "What is the average rainfall recorded at DISTRICT level in 2018?",
+    "sql": "SELECT AVG(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = l.location_id WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2018;"
+  },
+  {
+    "question": "Which state has the highest rainfall in 2010?",
+    "sql": "SELECT s.state_name, SUM(l.rainfall_value) AS total_rainfall FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = l.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2010 GROUP BY s.state_name ORDER BY total_rainfall DESC LIMIT 1;"
+  },
+  {
+    "question": "Give rainfall values grouped by rainfall_data_collection_id?",
+    "sql": "SELECT l.rainfall_data_collection_id, SUM(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l GROUP BY l.rainfall_data_collection_id;"
+  },
+  {
+    "question": "What is the total rainfall recorded on a specific rainfall_recorded_date?",
+    "sql": "SELECT SUM(l.rainfall_value) FROM npcyf_schema.\"LOCATION_RAINFALL\" AS l WHERE l.rainfall_recorded_date = DATE '2010-01-01';"
+  },
+  {
+    "question": "what is the highest temperature in jodhpur?",
+    "sql": "SELECT MAX(t.temperature_value) FROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = t.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Jodhpur%';"
+  },
+  {
+    "question": "what is the lowest temperature in jodhpur?",
+    "sql": "SELECT MIN(t.temperature_value) FROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = t.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Jodhpur%';"
+  },
+  {
+    "question": "what is the lowest temperature in Kolkata in month of march?",
+    "sql": "SELECT MIN(t.temperature_value) FROM npcyf_schema.\"LOCATION_TEMPERATURE\" AS t JOIN npcyf_schema.\"DISTRICT\" AS d ON d.district_id = t.location_id JOIN npcyf_schema.\"STATE\" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Kolkata%' AND EXTRACT(MONTH FROM t.temperature_recorded_date) = 3;"
+  }
+]

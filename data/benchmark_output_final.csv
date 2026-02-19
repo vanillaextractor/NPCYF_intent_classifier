@@ -1,0 +1,259 @@
+question,sql,sql result
+List all active features from FEATURE_MASTER?,"SELECT feature_id, feature_title, feature_description, feature_data_category, feature_temporal_interval, feature_location_level FROM npcyf_schema.""FEATURE_MASTER"" WHERE feature_is_active = TRUE;","[(43, 'Cropped Area - State', 'Cropped area at state level', 'CROPPED_AREA', 'SEASON', 'STATE'), (1, 'Cultivation Year', 'Start year', 'APY_YEAR', 'NA', 'STATE'), (7, 'Yield - State', 'Yield at state level', 'YIELD', 'SEASON', 'STATE'), (73, 'Total Rainfall - District - Year', 'Total rainfall yearly at district level', 'TOTAL_RAINFALL', 'YEAR', 'DISTRICT'), (76, 'Total Rainfall - State - Month', 'Total rainfall monthly at state level', 'TOTAL_RAINFALL', 'MONTH', 'STATE'), (52, 'Min - Max Temp - State - Week', 'Weekly min of max temp at the state level', 'MAX_TEMPERATURE', 'WEEK', 'STATE'), (55, 'Max - Max Temp - State - Month', 'Monthly max of max temp at the state level', 'MAX_TEMPERATURE', 'MONTH', 'STATE'), (58, 'Avg - Max Temp - State - Month', 'Monthly average of max temp at the state level', 'MAX_TEMPERATURE', 'MONTH', 'STATE'), (79, 'Total Rainfall - District - Month', 'Total rainfall monthly at the district level', 'TOTAL_RAINFALL', 'MONTH', 'DISTRICT'), (91, 'Min - Min Temp..."
+What are the feature_data_category values available?,"SELECT DISTINCT feature_data_category FROM npcyf_schema.""FEATURE_MASTER"";","('MAX_TEMPERATURE',)
+('MIN_TEMPERATURE',)
+('CROPPED_AREA',)
+('YIELD',)
+('APY_YEAR',)
+('TOTAL_RAINFALL',)
+('PRODUCTION',)"
+How many features exist in each training_feature_set?,"SELECT tfs.training_feature_set_id, tfs.training_feature_set_title, COUNT(tfsf.feature_id) AS total_features FROM npcyf_schema.""TRAINING_FEATURE_SET"" AS tfs JOIN npcyf_schema.""TRAINING_FEATURE_SET_FEATURE"" AS tfsf ON tfs.training_feature_set_id = tfsf.training_feature_set_id GROUP BY tfs.training_feature_set_id, tfs.training_feature_set_title ORDER BY tfs.training_feature_set_id;","(4, 'ARIMA MODEL', 3)
+(13, 'ARIMAX Feature Set', 8)
+(16, 'ARIMA_wh Feature Set', 10)
+(22, 'ARIMAX_2', 5)
+(28, 'Random Forest test data 2', 4)
+(31, 'Random Forest test data 3', 5)
+(37, 'Sarima-X', 4)
+(40, 'Random Forest ', 3)
+(43, 'test dataset with new data', 4)
+(46, 'Kharif Rice Training Set', 4)
+(49, 'Kharif Soyabean Training Set', 4)
+(52, 'Kharif Tur Training Set', 4)
+(55, 'Kharif Cotton Training Set', 4)
+(58, 'Testing Kharif Feature Set', 3)
+(61, 'test', 4)
+(67, 'test 1', 5)"
+Which features are marked as target variables?,"SELECT fm.feature_id, fm.feature_title FROM npcyf_schema.""TRAINING_FEATURE_SET_FEATURE"" AS tfsf JOIN npcyf_schema.""FEATURE_MASTER"" AS fm ON fm.feature_id = tfsf.feature_id WHERE tfsf.is_feature_target = TRUE;","(4, 'Yield - District')
+(7, 'Yield - State')
+(7, 'Yield - State')
+(76, 'Total Rainfall - State - Month')
+(139, 'Yield - State from State')
+(139, 'Yield - State from State')
+(139, 'Yield - State from State')
+(139, 'Yield - State from State')
+(139, 'Yield - State from State')
+(58, 'Avg - Max Temp - State - Month')
+(139, 'Yield - State from State')
+(139, 'Yield - State from State')
+(7, 'Yield - State')"
+Show feature_title and feature_temporal_interval?,"SELECT feature_title, feature_temporal_interval FROM npcyf_schema.""FEATURE_MASTER"";","[('Cropped Area - State', 'SEASON'), ('Cultivation Year', 'NA'), ('Yield - District', 'SEASON'), ('Yield - State', 'SEASON'), ('Total Rainfall -State', 'YEAR'), ('Total Rainfall - District - Year', 'YEAR'), ('Total Rainfall - State - Month', 'MONTH'), ('Min - Max Temp - State - Week', 'WEEK'), ('Max - Max Temp - State - Month', 'MONTH'), ('Avg - Max Temp - State - Month', 'MONTH'), ('Total Rainfall - District - Month', 'MONTH'), ('Min - Min Temp - District - Fortnight', 'FORTNIGHT'), ('Total Rainfall - State - Fortnight', 'FORTNIGHT'), ('Avg - Max Temp - District - Fortnight', 'FORTNIGHT'), ('Avg - Max Temp - State - Fortnight', 'FORTNIGHT'), ('Min Temp - State - Day', 'DAY'), ('Avg - Min Temp - District - Fortnight', 'FORTNIGHT'), ('Production - State', 'SEASON'), ('Total Rainfall - District - Fortnight', 'FORTNIGHT'), ('Total Rainfall - State - DAY', 'DAY'), ('Total Rainfall - State - Week', 'WEEK'), ('Avg - Min Temp - State - Fortnight', 'FORTNIGHT'), ('Max - Max Temp - State - W..."
+What crops are included in each training_feature_set_data?,"SELECT training_feature_set_data_id, training_feature_set_data_title, training_feature_set_data_crops FROM npcyf_schema.""TRAINING_FEATURE_SET_DATA"";","[(37, 'Statistical ARIMA', [793]), (46, 'Statistical ARIMA', [815]), (49, 'Statistical ARIMA', [815]), (52, 'Statistical ARIMA', [815]), (55, 'Statistical ARIMA', [1]), (58, 'Statistical ARIMA', [1]), (61, 'Statistical ARIMA', [1]), (64, 'Statistical ARIMA', [1]), (67, 'Statistical ARIMA', [1]), (85, 'Statistical ARIMA', [1]), (88, 'Statistical ARIMA', [793]), (91, 'Statistical ARIMA', [793]), (94, 'Statistical ARIMA', [793]), (97, 'Statistical ARIMA', [793]), (100, 'Statistical ARIMA', [815]), (103, 'Statistical ARIMA', [815]), (106, 'Statistical ARIMA', [815]), (109, 'Statistical ARIMA', [815]), (112, 'Statistical ARIMA', [815]), (115, 'Statistical ARIMA', [122]), (118, 'Statistical ARIMA', [122]), (121, 'Statistical ARIMA', [122]), (124, 'Statistical ARIMA', [122]), (127, 'Statistical ARIMA', [122]), (178, 'ARIMAX_wheat', [12]), (181, 'ARIMAX_rice', [1]), (184, 'ARIMAX_rice', [1]), (187, 'ARIMAX_rice', [1]), (190, 'ARIMAX_rice', [1]), (193, 'ARIMAX_rice_kh', [1]), (196, 'ARIMAX_r..."
+Which state has the maximum number of districts in the database?,"SELECT s.state_name, COUNT(d.district_id) AS total_districts FROM npcyf_schema.""STATE"" AS s JOIN npcyf_schema.""DISTRICT"" AS d ON s.state_id = d.state_id GROUP BY s.state_name ORDER BY total_districts DESC LIMIT 1;","('uttar pradesh', 97)"
+Which state has the minimum number of districts in the database?,"SELECT s.state_name, COUNT(d.district_id) AS total_districts FROM npcyf_schema.""STATE"" AS s JOIN npcyf_schema.""DISTRICT"" AS d ON s.state_id = d.state_id GROUP BY s.state_name ORDER BY total_districts ASC LIMIT 1;","('delhi', 1)"
+How many districts exist in Bihar?,"SELECT COUNT(d.district_id) AS total_districts_in_bihar FROM npcyf_schema.""DISTRICT"" AS d JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE s.state_name ILIKE '%Bihar%';","(49,)"
+What seasons are available in the database?,"SELECT season_name FROM npcyf_schema.""SEASON"";","('kharif',)
+('rabi',)
+('summer',)
+('rabi+summer',)
+('total',)"
+What is the season_start and season_end for each season?,"SELECT season_name, season_start, season_end FROM npcyf_schema.""SEASON"";","('kharif', None, None)
+('rabi', None, None)
+('summer', None, None)
+('rabi+summer', None, None)
+('total', None, None)"
+Which season starts in a specific date range?,"SELECT season_name FROM npcyf_schema.""SEASON"" WHERE season_start BETWEEN DATE '2000-01-01' AND DATE '2000-12-31';","Error: operator does not exist: integer >= date LINE 1: ...ame FROM npcyf_schema.""SEASON"" WHERE season_start BETWEEN DA... ^ HINT: No operator matches the given name and argument types. You might need to add explicit type casts."
+How many seasons are stored in the SEASON table?,"SELECT COUNT(*) AS total_seasons FROM npcyf_schema.""SEASON"";","(5,)"
+List all season names ordered alphabetically?,"SELECT season_name FROM npcyf_schema.""SEASON"" ORDER BY season_name ASC;","('kharif',)
+('rabi',)
+('rabi+summer',)
+('summer',)
+('total',)"
+List all states with their latitude and longitude?,"SELECT state_name, state_latitude, state_longitude FROM npcyf_schema.""STATE"";","[('andhra pradesh', None, None), ('andaman and nicobar islands', None, None), ('assam', None, None), ('bihar', None, None), ('gujarat', None, None), ('haryana', None, None), ('karnataka', None, None), ('madhya pradesh', None, None), ('maharashtra', None, None), ('odisha', None, None), ('punjab', None, None), ('rajasthan', None, None), ('tamil nadu', None, None), ('uttar pradesh', None, None), ('west bengal', None, None), ('chhattisgarh', None, None), ('jharkhand', None, None), ('uttarakhand', None, None), ('manipur', None, None), ('himachal pradesh', None, None), ('sikkim', None, None), ('meghalaya', None, None), ('jammu and kashmir', None, None), ('telangana', None, None), ('arunachal pradesh', None, None), ('mizoram', None, None), ('ladakh', None, None), ('nagaland', None, None), ('the dadra & nagar haveli and daman and diu', None, None), ('chandigarh', None, None), ('tripura', None, None), ('puducherry', None, None), ('kerala', None, None), ('dadra and nagar haveli', None, None),..."
+What is the area of each state?,"SELECT state_name, state_area FROM npcyf_schema.""STATE"";","('andhra pradesh', None)
+('andaman and nicobar islands', None)
+('assam', None)
+('bihar', None)
+('gujarat', None)
+('haryana', None)
+('karnataka', None)
+('madhya pradesh', None)
+('maharashtra', None)
+('odisha', None)
+('punjab', None)
+('rajasthan', None)
+('tamil nadu', None)
+('uttar pradesh', None)
+('west bengal', None)
+('chhattisgarh', None)
+('jharkhand', None)
+('uttarakhand', None)
+('manipur', None)
+('himachal pradesh', None)
+('sikkim', None)
+('meghalaya', None)
+('jammu and kashmir', None)
+('telangana', None)
+('arunachal pradesh', None)
+('mizoram', None)
+('ladakh', None)
+('nagaland', None)
+('the dadra & nagar haveli and daman and diu', None)
+('chandigarh', None)
+('tripura', None)
+('puducherry', None)
+('kerala', None)
+('dadra and nagar haveli', None)
+('daman and diu', None)
+('delhi', None)
+('goa', None)"
+List all districts belonging to Bihar?,"SELECT d.district_name FROM npcyf_schema.""DISTRICT"" AS d JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE s.state_name ILIKE '%Bihar%';","('aurangabad',)
+('nawada',)
+('gaya, nalanda',)
+('jamui',)
+('mungair',)
+('banka',)
+('bhabhua kaimur',)
+('rohtas',)
+('sheikapura',)
+('arwal',)
+('jehanabad',)
+('lakhisarai',)
+('buxar',)
+('bhagalpur',)
+('begusarai',)
+('shahabad (now part of bhojpur district)',)
+('khagaria',)
+('patna',)
+('samastipur',)
+('katihar',)
+('vaishali',)
+('purnea',)
+('bhojpur',)
+('madhepura',)
+('saran',)
+('muzaffarpur',)
+('darbhanga',)
+('araria',)
+('kishanganj',)
+('siwan',)
+('saharsa',)
+('gopalganj',)
+('supaul',)
+('champaran',)
+('sheohar',)
+('madhubani',)
+('champaran(east)',)
+('sitamarhi',)
+('champaran(west)',)
+('kaimur (bhabua)',)
+('munger',)
+('sheikhpura',)
+('gaya',)
+('nalanda',)
+('pashchim champaran',)
+('purbi champaran',)
+('purnia',)
+('champaraneast',)
+('champaranwest',)"
+How many districts exist per state?,"SELECT s.state_name, COUNT(d.district_id) AS total_districts FROM npcyf_schema.""DISTRICT"" AS d JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id GROUP BY s.state_name ORDER BY s.state_name;","('andaman and nicobar islands', 3)
+('andhra pradesh', 32)
+('arunachal pradesh', 25)
+('assam', 39)
+('bihar', 49)
+('chandigarh', 1)
+('chhattisgarh', 43)
+('dadra and nagar haveli', 1)
+('daman and diu', 2)
+('delhi', 1)
+('goa', 2)
+('gujarat', 48)
+('haryana', 27)
+('himachal pradesh', 14)
+('jammu and kashmir', 21)
+('jharkhand', 37)
+('karnataka', 52)
+('kerala', 16)
+('ladakh', 2)
+('madhya pradesh', 55)
+('maharashtra', 43)
+('manipur', 9)
+('meghalaya', 11)
+('mizoram', 11)
+('nagaland', 16)
+('odisha', 41)
+('puducherry', 4)
+('punjab', 31)
+('rajasthan', 38)
+('sikkim', 6)
+('tamil nadu', 60)
+('telangana', 47)
+('the dadra & nagar haveli and daman and diu', 3)
+('tripura', 8)
+('uttar pradesh', 97)
+('uttarakhand', 19)
+('west bengal', 40)"
+Show district_name along with state_name?,"SELECT d.district_name, s.state_name FROM npcyf_schema.""DISTRICT"" AS d JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id;","[('chittoor', 'andhra pradesh'), ('kadapa ysr', 'andhra pradesh'), ('s.p.s.nellore', 'andhra pradesh'), ('anantapur', 'andhra pradesh'), ('prakasam', 'andhra pradesh'), ('kurnool', 'andhra pradesh'), ('krishna', 'andhra pradesh'), ('guntur', 'andhra pradesh'), ('west godavari', 'andhra pradesh'), ('east godavari', 'andhra pradesh'), ('visakhapatnam', 'andhra pradesh'), ('vizianagaram', 'andhra pradesh'), ('srikakulam', 'andhra pradesh'), ('jogulamba', 'telangana'), ('wanaparthy', 'telangana'), ('nagarkurnool', 'telangana'), ('mahabubnagar', 'telangana'), ('nalgonda', 'telangana'), ('suryapet', 'telangana'), ('rangareddy', 'telangana'), ('vikarabad', 'telangana'), ('malkaigiri', 'telangana'), ('hyderabad', 'telangana'), ('yadadri bhuvanagiri', 'telangana'), ('bhadradri', 'telangana'), ('medak', 'telangana'), ('sangareddy', 'telangana'), ('mahabubabad, mulugu, narayanpet', 'telangana'), ('janagaon', 'telangana'), ('khammam', 'telangana'), ('warangal urban', 'telangana'), ('warangal', ..."
+What is the average reservoir level of Bihar in 2015?,"SELECT AVG(l.level) FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2015;","(None,)"
+Find the maximum FRL recorded in Kerala in 2020?,"SELECT MAX(l.frl) FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Kerala%' AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2020;","(Decimal('981.46'),)"
+What is the total current_live_storage of Odisha in 2018?,"SELECT SUM(l.current_live_storage) FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Odisha%' AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2018;","(Decimal('1867.67'),)"
+Which state has the highest reservoir level in 2010?,"SELECT s.state_name, MAX(l.level) AS max_level FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2010 GROUP BY s.state_name ORDER BY max_level DESC LIMIT 1;","('tamil nadu', Decimal('1002.15'))"
+Show reservoir levels grouped by reservoir_level_recorded_year?,"SELECT EXTRACT(YEAR FROM l.reservoir_level_recorded_date) AS year, AVG(l.level) AS avg_level FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l GROUP BY year ORDER BY year;","[(Decimal('1991'), Decimal('707.4827945205479452')), (Decimal('1992'), Decimal('695.7700000000000000')), (Decimal('1993'), Decimal('695.2732328767123288')), (Decimal('1994'), Decimal('703.5109041095890411')), (Decimal('1995'), Decimal('611.6812339743589744')), (Decimal('1996'), Decimal('659.6297472677595628')), (Decimal('1997'), Decimal('624.9413260273972603')), (Decimal('1998'), Decimal('627.7702958904109589')), (Decimal('1999'), Decimal('602.0818063918480778')), (Decimal('2000'), Decimal('343.8176287751677852')), (Decimal('2001'), Decimal('398.6874355108328690')), (Decimal('2002'), Decimal('391.1076418923203754')), (Decimal('2003'), Decimal('389.2006923365186434')), (Decimal('2004'), Decimal('393.5451804943710230')), (Decimal('2005'), Decimal('392.6541535474868808')), (Decimal('2006'), Decimal('397.2879528882220555')), (Decimal('2007'), Decimal('401.3775691013879087')), (Decimal('2008'), Decimal('405.2906443449484135')), (Decimal('2009'), Decimal('391.3905974664862870')), (Decimal..."
+What is the average reservoir level at DISTRICT level in 2016?,"SELECT AVG(l.level) FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2016;","(Decimal('391.1948585741031220'),)"
+List reservoir levels recorded on a specific reservoir_level_recorded_date?,"SELECT l.level FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l WHERE l.reservoir_level_recorded_date = DATE '2010-01-01';","[(Decimal('315.04'),), (Decimal('518.62'),), (Decimal('348.54'),), (Decimal('449.40'),), (Decimal('329.59'),), (Decimal('416.00'),), (Decimal('657.75'),), (Decimal('102.56'),), (Decimal('744.12'),), (Decimal('497.02'),), (Decimal('623.07'),), (Decimal('127.15'),), (Decimal('643.89'),), (Decimal('304.75'),), (Decimal('164.07'),), (Decimal('55.32'),), (Decimal('79.35'),), (Decimal('741.82'),), (Decimal('316.25'),), (Decimal('412.62'),), (Decimal('489.94'),), (Decimal('655.20'),), (Decimal('390.00'),), (Decimal('385.39'),), (Decimal('53.60'),), (Decimal('172.91'),), (Decimal('87.44'),), (Decimal('856.36'),), (Decimal('880.60'),), (Decimal('190.41'),), (Decimal('159.16'),), (Decimal('723.31'),), (Decimal('458.11'),), (Decimal('256.94'),), (Decimal('427.10'),), (Decimal('692.58'),), (Decimal('344.65'),), (Decimal('87.54'),), (Decimal('115.56'),), (Decimal('124.11'),), (Decimal('978.00'),), (Decimal('126.70'),), (Decimal('580.52'),), (Decimal('689.15'),), (Decimal('112.15'),), (Decimal('6..."
+Is wheat present in the crop table?,"SELECT EXISTS ( SELECT 1 FROM npcyf_schema.""CROP"" WHERE crop_name ILIKE '%wheat%' );","(True,)"
+List all crop names available in the database?,"SELECT crop_name FROM npcyf_schema.""CROP"";","('rice',)
+('wheat',)
+('barley',)
+('maize',)
+('jowar',)
+('bajra',)
+('small millets',)
+('potato',)
+('rapeseed &mustard',)
+('masoor',)
+('ragi',)
+('total food grains',)
+('other kharif pulses',)
+('other rabi pulses',)
+('shree anna /nutri cereals',)
+('nutri/coarse cereals',)
+('cereals',)
+('tur',)
+('gram',)
+('urad',)
+('moong',)
+('lentil',)
+('other pulses',)
+('total pulses',)
+('castor seed',)
+('cotton',)
+('groundnut',)
+('soyabean',)
+('sugarcane',)
+('arhar/tur',)
+('cotton(lint)',)"
+How many crops exist in the CROP table?,"SELECT COUNT(*) AS total_crops FROM npcyf_schema.""CROP"";","(31,)"
+What is the crop_id of rice?,"SELECT crop_id FROM npcyf_schema.""CROP"" WHERE crop_name ILIKE '%rice%';","(1,)"
+Show all crops ordered by crop_name?,"SELECT * FROM npcyf_schema.""CROP"" ORDER BY crop_name;","[(771, 'arhar/tur', datetime.datetime(2025, 1, 23, 14, 21, 19, 894679), None), (56, 'bajra', datetime.datetime(2024, 10, 28, 13, 34, 36, 254333), ''), (23, 'barley', datetime.datetime(2024, 10, 28, 13, 34, 36, 151605), ''), (353, 'castor seed', datetime.datetime(2024, 12, 20, 17, 1, 49, 976712), ''), (100, 'cereals', datetime.datetime(2024, 10, 28, 13, 34, 36, 378967), ''), (364, 'cotton', datetime.datetime(2024, 12, 20, 17, 1, 50, 5622), ''), (782, 'cotton(lint)', datetime.datetime(2025, 1, 23, 14, 21, 19, 924264), None), (122, 'gram', datetime.datetime(2024, 10, 28, 13, 34, 36, 443817), ''), (375, 'groundnut', datetime.datetime(2024, 12, 20, 17, 1, 50, 34158), ''), (45, 'jowar', datetime.datetime(2024, 10, 28, 13, 34, 36, 219853), ''), (155, 'lentil', datetime.datetime(2024, 10, 28, 13, 34, 36, 538290), ''), (34, 'maize', datetime.datetime(2024, 10, 28, 13, 34, 36, 186100), ''), (826, 'masoor', datetime.datetime(2025, 1, 23, 17, 29, 24, 765877), None), (144, 'moong', datetime.date..."
+What is the maximum temperature of West Bengal in 2000?,"SELECT MAX(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND s.state_name ILIKE '%West Bengal%' AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2000;","(Decimal('40.62'),)"
+Find the average temperature of Bihar in 2010?,"SELECT AVG(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2010;","(Decimal('25.9815208201034201'),)"
+What is the minimum temperature recorded in Kerala in 2015?,"SELECT MIN(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND s.state_name ILIKE '%Kerala%' AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2015;","(Decimal('13.82'),)"
+Show yearly temperature values for Odisha?,"SELECT EXTRACT(YEAR FROM t.temperature_recorded_date) AS year, AVG(t.temperature_value) AS avg_temperature FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND s.state_name ILIKE '%Odisha%' GROUP BY year ORDER BY year;","[(Decimal('1996'), Decimal('26.6997359470949457')), (Decimal('1997'), Decimal('26.5183098724610298')), (Decimal('1998'), Decimal('26.9074936230514880')), (Decimal('1999'), Decimal('26.6328649031648559')), (Decimal('2000'), Decimal('26.7028811004333899')), (Decimal('2001'), Decimal('26.4224548889938592')), (Decimal('2002'), Decimal('26.6716013226263581')), (Decimal('2003'), Decimal('26.6533318375059046')), (Decimal('2004'), Decimal('26.3927623892971547')), (Decimal('2005'), Decimal('26.7983252243741143')), (Decimal('2006'), Decimal('26.4865824279641001')), (Decimal('2007'), Decimal('26.7200888049126122')), (Decimal('2008'), Decimal('26.7125683060109290')), (Decimal('2009'), Decimal('27.3838471894189891')), (Decimal('2010'), Decimal('27.3097404345772319')), (Decimal('2011'), Decimal('26.3889773264052905')), (Decimal('2012'), Decimal('26.7592147164122857')), (Decimal('2013'), Decimal('26.4440590458195560')), (Decimal('2014'), Decimal('26.3860819555975437')), (Decimal('2015'), Decimal('..."
+What is the average temperature recorded at STATE level in 2020?,"SELECT AVG(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t WHERE t.location_type = 'STATE' AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2020;","(None,)"
+What is the maximum temperature recorded at DISTRICT level in 2018?,"SELECT MAX(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t WHERE t.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2018;","(Decimal('46.51'),)"
+Which state recorded the highest temperature in 2012?,"SELECT s.state_name, MAX(t.temperature_value) AS max_temperature FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2012 GROUP BY s.state_name ORDER BY max_temperature DESC LIMIT 1;","('rajasthan', Decimal('46.94'))"
+What temperature values belong to a given temperature_data_collection_id?,"SELECT t.temperature_value FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t WHERE t.temperature_data_collection_id = 1;","[(Decimal('28.27'),), (Decimal('27.99'),), (Decimal('28.28'),), (Decimal('28.30'),), (Decimal('28.40'),), (Decimal('29.23'),), (Decimal('29.31'),), (Decimal('29.20'),), (Decimal('28.92'),), (Decimal('29.91'),), (Decimal('30.18'),), (Decimal('29.87'),), (Decimal('30.71'),), (Decimal('31.06'),), (Decimal('31.97'),), (Decimal('32.07'),), (Decimal('31.84'),), (Decimal('30.89'),), (Decimal('31.25'),), (Decimal('31.51'),), (Decimal('32.48'),), (Decimal('32.94'),), (Decimal('32.95'),), (Decimal('32.67'),), (Decimal('32.22'),), (Decimal('31.23'),), (Decimal('30.72'),), (Decimal('30.39'),), (Decimal('30.81'),), (Decimal('31.65'),), (Decimal('31.57'),), (Decimal('31.67'),), (Decimal('31.30'),), (Decimal('31.93'),), (Decimal('32.02'),), (Decimal('32.22'),), (Decimal('33.90'),), (Decimal('33.79'),), (Decimal('33.72'),), (Decimal('33.55'),), (Decimal('32.65'),), (Decimal('33.89'),), (Decimal('32.64'),), (Decimal('32.71'),), (Decimal('33.78'),), (Decimal('32.24'),), (Decimal('31.96'),), (Decimal(..."
+What is the total rainfall of Bihar in the year 2010?,"SELECT SUM(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2010;","(Decimal('60740.48'),)"
+What is the average rainfall of West Bengal in 2005?,"SELECT AVG(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%West Bengal%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2005;","(Decimal('4.8525397843194404'),)"
+Find the maximum rainfall recorded for Odisha in 2020?,"SELECT MAX(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Odisha%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2020;","(Decimal('308.42'),)"
+What is the minimum rainfall recorded in Kerala in 2015?,"SELECT MIN(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Kerala%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2015;","(Decimal('0.00'),)"
+Show the yearly rainfall of Bihar between 2000 and 2010?,"SELECT EXTRACT(YEAR FROM l.rainfall_recorded_date) AS year, SUM(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) BETWEEN 2000 AND 2010 GROUP BY year ORDER BY year;","(Decimal('2000'), Decimal('96706.95'))
+(Decimal('2001'), Decimal('103579.54'))
+(Decimal('2002'), Decimal('91977.41'))
+(Decimal('2003'), Decimal('109571.20'))
+(Decimal('2004'), Decimal('92612.36'))
+(Decimal('2005'), Decimal('75145.16'))
+(Decimal('2006'), Decimal('82328.01'))
+(Decimal('2007'), Decimal('119489.06'))
+(Decimal('2008'), Decimal('95138.36'))
+(Decimal('2009'), Decimal('69792.23'))
+(Decimal('2010'), Decimal('60740.48'))"
+What is the total rainfall recorded at STATE level in 2012?,"SELECT SUM(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""STATE"" AS s ON s.state_id = l.location_id WHERE l.location_type = 'STATE' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2012;","(None,)"
+What is the average rainfall recorded at DISTRICT level in 2018?,"SELECT AVG(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2018;","(Decimal('2.7597944849670877'),)"
+Which state has the highest rainfall in 2010?,"SELECT s.state_name, SUM(l.rainfall_value) AS total_rainfall FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2010 GROUP BY s.state_name ORDER BY total_rainfall DESC LIMIT 1;","('assam', Decimal('171370.71'))"
+Give rainfall values grouped by rainfall_data_collection_id?,"SELECT l.rainfall_data_collection_id, SUM(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l GROUP BY l.rainfall_data_collection_id;","(2, Decimal('15145662.87'))
+(15, Decimal('19424536.03'))"
+What is the total rainfall recorded on a specific rainfall_recorded_date?,"SELECT SUM(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l WHERE l.rainfall_recorded_date = DATE '2010-01-01';","(Decimal('254.20'),)"
+what is the highest temperature in jodhpur?,"SELECT MAX(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Jodhpur%';","(Decimal('47.61'),)"
+what is the lowest temperature in jodhpur?,"SELECT MIN(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Jodhpur%';","(Decimal('2.48'),)"
+what is the lowest temperature in Kolkata in month of march?,"SELECT MIN(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Kolkata%' AND EXTRACT(MONTH FROM t.temperature_recorded_date) = 3;","(Decimal('11.58'),)"

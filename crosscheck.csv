@@ -1,0 +1,62 @@
+Question,Gold Value,Predicted Value,Time (s),Match Status,Generated SQL
+What is the total rainfall of the year 2010 in Bihar?,60740.48,60740.48,14.37,TRUE,"SELECT SUM(lr.rainfall_value) AS total_rainfall
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2010;"
+"What is average Rainfall in the month of june,july,sept in year 2000 in west bengal?",13.0544236614449,,5.51,FALSE,"SELECT AVG(lr.rainfall_value) 
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name = 'West Bengal' 
+  AND EXTRACT(MONTH FROM lr.rainfall_recorded_date) IN (6, 7, 9) 
+  AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2000;"
+find the Maximum Temperature of kolkata in 2000.?,39.33,"Error: column t2.temperature_value does not exist
+LINE 1: SELECT MAX(T2.temperature_value) AS max_temperature
+                   ^
+HINT:  Perhaps you meant to reference the column ""t1.temperature_value"".
+",4.5,FALSE,"SELECT MAX(T2.temperature_value) AS max_temperature
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""DISTRICT"" AS T2 ON T1.location_type = 'DISTRICT' AND T1.location_id = T2.district_id
+JOIN npcyf_schema.""STATE"" AS T3 ON T2.state_id = T3.state_id
+WHERE T3.state_name = 'Kolkata' AND EXTRACT(YEAR FROM T1.temperature_recorded_date) = 2000;"
+What is the total rainfall of the year 2020 in Odisha?,85013.86,,4.64,FALSE,"SELECT SUM(lr.rainfall_value) AS total_rainfall
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name = 'Odisha' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2020;"
+find the Maximum Temperature of kolkata in 2000.?,39.33,"Error: column t2.temperature_value does not exist
+LINE 1: SELECT MAX(T2.temperature_value) AS max_temperature
+                   ^
+HINT:  Perhaps you meant to reference the column ""t1.temperature_value"".
+",4.67,FALSE,"SELECT MAX(T2.temperature_value) AS max_temperature
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""DISTRICT"" AS T2 ON T1.location_type = 'DISTRICT' AND T1.location_id = T2.district_id
+JOIN npcyf_schema.""STATE"" AS T3 ON T2.state_id = T3.state_id
+WHERE T3.state_name = 'Kolkata' AND EXTRACT(YEAR FROM T1.temperature_recorded_date) = 2000;"
+What is average Rainfall in Bihar in year 2000?,3.47666630716134,3.4766663071613460,4.35,TRUE,"SELECT AVG(rf.rainfall_value) AS average_rainfall
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS rf
+JOIN npcyf_schema.""DISTRICT"" AS d ON rf.location_type = 'DISTRICT' AND rf.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Bihar%' AND rf.rainfall_recorded_year = 2000;"
+find the average temperature of west bengal in 2000?,25.0727623257812,"Error: column t2.temperature_value does not exist
+LINE 1: SELECT AVG(T2.temperature_value) AS average_temperature
+                   ^
+HINT:  Perhaps you meant to reference the column ""t1.temperature_value"".
+",3.57,FALSE,"SELECT AVG(T2.temperature_value) AS average_temperature
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""STATE"" AS T2 ON T1.location_type = 'STATE' AND T1.location_id = T2.state_id
+WHERE T2.state_name ILIKE '%West Bengal%' AND EXTRACT(YEAR FROM T1.temperature_recorded_date) = 2000;"
+is wheat available in crop table?,True,,0.77,FALSE,"SELECT crop_name 
+FROM CROP 
+WHERE crop_name = 'Wheat';"
+What is the total rainfall of Kerala in the year 2010?,28674.96,,4.5,FALSE,"SELECT SUM(lr.rainfall_value) AS total_rainfall
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name = 'Kerala' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2010;"
+What are the type of season are there in the database?,"""kharif""
+""rabi""
+""summer""
+""rabi+summer""
+""total""",summer,0.48,FALSE,SELECT DISTINCT season_name FROM SEASON;

@@ -1,0 +1,34 @@
+question,gold_sql,pred_sql,gold_rows,pred_rows,status
+List all active features from FEATURE_MASTER?,"SELECT feature_id, feature_title, feature_description, feature_data_category, feature_temporal_interval, feature_location_level FROM npcyf_schema.""FEATURE_MASTER"" WHERE feature_is_active = TRUE;",N/A (Intent: platform),,,Skipped
+What are the feature_data_category values available?,"SELECT DISTINCT feature_data_category FROM npcyf_schema.""FEATURE_MASTER"";",N/A (Intent: general),,,Skipped
+How many features exist in each training_feature_set?,"SELECT tfs.training_feature_set_id, tfs.training_feature_set_title, COUNT(tfsf.feature_id) AS total_features FROM npcyf_schema.""TRAINING_FEATURE_SET"" AS tfs JOIN npcyf_schema.""TRAINING_FEATURE_SET_FEATURE"" AS tfsf ON tfs.training_feature_set_id = tfsf.training_feature_set_id GROUP BY tfs.training_feature_set_id, tfs.training_feature_set_title ORDER BY tfs.training_feature_set_id;",N/A (Intent: general),,,Skipped
+Which features are marked as target variables?,"SELECT fm.feature_id, fm.feature_title FROM npcyf_schema.""TRAINING_FEATURE_SET_FEATURE"" AS tfsf JOIN npcyf_schema.""FEATURE_MASTER"" AS fm ON fm.feature_id = tfsf.feature_id WHERE tfsf.is_feature_target = TRUE;",N/A (Intent: platform),,,Skipped
+Show feature_title and feature_temporal_interval?,"SELECT feature_title, feature_temporal_interval FROM npcyf_schema.""FEATURE_MASTER"";",N/A (Intent: general),,,Skipped
+What crops are included in each training_feature_set_data?,"SELECT training_feature_set_data_id, training_feature_set_data_title, training_feature_set_data_crops FROM npcyf_schema.""TRAINING_FEATURE_SET_DATA"";","SELECT T1.crop_name, T2.training_feature_set_data_id
+FROM npcyf_schema.""TRAINING_FEATURE_SET_DATA"" AS T1
+JOIN npcyf_schema.""TRAINING_FEATURE_SET_FEATURE"" AS T2 ON T1.training_feature_set_feature_id = T2.training_feature_set_feature_id;",196,-1,"Error: column t1.training_feature_set_feature_id does not exist
+LINE 3: ...yf_schema.""TRAINING_FEATURE_SET_FEATURE"" AS T2 ON T1.trainin...
+                                                             ^
+HINT:  Perhaps you meant to reference the column ""t2.training_feature_set_feature_id"".
+"
+Which state has the maximum number of districts in the database?,"SELECT s.state_name, COUNT(d.district_id) AS total_districts FROM npcyf_schema.""STATE"" AS s JOIN npcyf_schema.""DISTRICT"" AS d ON s.state_id = d.state_id GROUP BY s.state_name ORDER BY total_districts DESC LIMIT 1;","SELECT s.state_name
+FROM npcyf_schema.""STATE"" AS s
+JOIN npcyf_schema.""DISTRICT"" AS d ON s.state_id = d.state_id
+GROUP BY s.state_name
+ORDER BY COUNT(d.district_name) DESC
+LIMIT 1;",1,1,Match
+Which state has the minimum number of districts in the database?,"SELECT s.state_name, COUNT(d.district_id) AS total_districts FROM npcyf_schema.""STATE"" AS s JOIN npcyf_schema.""DISTRICT"" AS d ON s.state_id = d.state_id GROUP BY s.state_name ORDER BY total_districts ASC LIMIT 1;","SELECT s.state_name
+FROM npcyf_schema.""STATE"" AS s
+JOIN npcyf_schema.""DISTRICT"" AS d ON s.state_id = d.state_id
+GROUP BY s.state_name
+ORDER BY COUNT(d.district_name) ASC
+LIMIT 1;",1,1,Match
+How many districts exist in Bihar?,"SELECT COUNT(d.district_id) AS total_districts_in_bihar
+FROM npcyf_schema.""DISTRICT"" AS d
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE s.state_name ILIKE '%Bihar%';","SELECT COUNT(d.district_id) 
+FROM npcyf_schema.""DISTRICT"" AS d 
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id 
+WHERE s.state_name ILIKE '%Bihar%';",1,1,Match
+What seasons are available in the database?,"SELECT season_name FROM npcyf_schema.""SEASON"";",N/A (Intent: general),,,Skipped

@@ -7,10 +7,11 @@ __pycache__/
 *.gguf
 models/
 .env
-data/
+
+# Large data and result files
+data/NPCYF_DB
+data/benchmark_results.csv
 keep/
-*.csv
-*.pdf
 benchmark_report.md
 Modelfile_*
 extract_pdf_text.py

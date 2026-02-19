@@ -1,0 +1,435 @@
+sql_queries,gold_value,model_answer,match,gold_sql,model_sql,timing(in secs),Mode,Detected_Entity
+What is the total rainfall of the year 2010 in Bihar?,60740.48,60740.48,TRUE,"SELECT SUM(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND s.state_name ILIKE '%Bihar%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2010;","SELECT SUM(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2010",4.28,STATE,Bihar
+"What is average Rainfall in the month of june,july,sept in year 2000 in west bengal?",13.05442366,13.05442366,TRUE,"SELECT avg(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND s.state_name ILIKE '%West Bengal%'
+  AND EXTRACT(MONTH FROM l.rainfall_recorded_date) IN (6,7,9)
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2000;","SELECT AVG(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%West Bengal%'
+AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2000
+AND EXTRACT(MONTH FROM lr.rainfall_recorded_date) IN (6, 7, 9)",4.81,STATE,West Bengal
+find the Maximum Temperature of kolkata in 2000.?,39.33,39.33,TRUE,"SELECT MAX(l.temperature_value) AS max_temperature
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON l.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON d.state_id = s.state_id
+WHERE d.district_name ILIKE '%kolkata%'
+  AND EXTRACT(YEAR FROM l.temperature_recorded_date) = 2000;","SELECT MAX(T1.temperature_value)
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""DISTRICT"" AS T2 ON T1.location_type = 'DISTRICT' AND T1.location_id = T2.district_id
+WHERE T2.district_name ILIKE '%Kolkata%' AND T1.temperature_recorded_year = 2000;",11.14,DISTRICT,Kolkata
+What is the total rainfall of the year 2020 in Odisha?,85013.86,85013.86,TRUE,"SELECT sum(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE s.state_name ILIKE '%odisha%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2020;","SELECT SUM(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Odisha%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2020;",4.67,STATE,Odisha
+What is average Rainfall in Bihar in year 2000?,3.476666307,3.476666307,TRUE,"SELECT avg(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+  WHERE s.state_name ILIKE '%bihar%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2000;","SELECT AVG(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Bihar%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2000",4.4,STATE,Bihar
+find the average temperature of west bengal in 2000?,25.07276233,25.07276233,TRUE,"SELECT avg(l.temperature_value)
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+  WHERE s.state_name ILIKE '%west bengal%'
+  AND EXTRACT(YEAR FROM l.temperature_recorded_date) = 2000;","SELECT AVG(t.temperature_value)
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t
+JOIN npcyf_schema.""DISTRICT"" AS d ON t.location_type = 'DISTRICT' AND t.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%West Bengal%' AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2000",11.59,STATE,West Bengal
+is wheat available in crop table?,TRUE,Empty Result,FALSE,"SELECT EXISTS (
+    SELECT 1
+    FROM npcyf_schema.""CROP""
+    WHERE crop_name ILIKE '%wheat%'
+) AS is_wheat_available;","SELECT crop_name
+FROM npcyf_schema.""CROP""
+WHERE crop_name = 'WHEAT';",2.8,GENERAL,N/A
+What is the total rainfall of Kerala in the year 2010?,28674.96,28674.96,TRUE,"SELECT sum(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+  WHERE s.state_name ILIKE '%kerala%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2010;","SELECT SUM(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Kerala%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2010",3.98,STATE,Kerala
+What are the type of season are there in the database?,"""kharif""
+""rabi""
+""summer""
+""rabi+summer""
+""total""","('summer',)",TRUE,"SELECT DISTINCT season_name
+FROM npcyf_schema.""SEASON""
+ORDER BY season_name;","SELECT DISTINCT season_name FROM npcyf_schema.""SEASON"";",2.12,GENERAL,N/A
+what is the lowest temperature in Kolkata in month of march?,11.58,11.58,TRUE,"SELECT MIN(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Kolkata%' AND EXTRACT(MONTH FROM t.temperature_recorded_date) = 3;","SELECT MIN(T1.temperature_value) AS lowest_temperature
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""DISTRICT"" AS T2 ON T1.location_type = 'DISTRICT' AND T1.location_id = T2.district_id
+WHERE T2.district_name ILIKE '%Kolkata%'
+AND EXTRACT(MONTH FROM T1.temperature_recorded_date) = 3",10.67,DISTRICT,Kolkata
+what is the lowest temperature in jodhpur?,2.48,2.48,TRUE,"SELECT MIN(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Jodhpur%';","SELECT MIN(T1.temperature_value) AS lowest_temperature
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""DISTRICT"" AS T2 ON T1.location_type = 'DISTRICT' AND T1.location_id = T2.district_id
+WHERE T2.district_name ILIKE '%Jodhpur%'",10.12,DISTRICT,Jodhpur
+what is the highest temperature in jodhpur?,47.61,47.61,TRUE,"SELECT MAX(t.temperature_value) FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = t.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE t.location_type = 'DISTRICT' AND d.district_name ILIKE '%Jodhpur%';","SELECT MAX(T1.temperature_value)
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""DISTRICT"" AS T2 ON T1.location_type = 'DISTRICT' AND T1.location_id = T2.district_id
+WHERE T2.district_name ILIKE '%Jodhpur%'",9.71,DISTRICT,Jodhpur
+Which state has the highest rainfall in 2010?,"assam , 171370.71",assam,TRUE,"SELECT s.state_name, SUM(l.rainfall_value) AS total_rainfall FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2010 GROUP BY s.state_name ORDER BY total_rainfall DESC LIMIT 1;","SELECT s.state_name
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2010
+GROUP BY s.state_name
+ORDER BY SUM(lr.rainfall_value) DESC
+LIMIT 1;",9.65,GENERAL,N/A
+What is the overall average rainfall for 2018 across all districts?,2.75979,2.75979,TRUE,"SELECT AVG(l.rainfall_value) FROM npcyf_schema.""LOCATION_RAINFALL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2018;","SELECT AVG(lr.rainfall_value) AS avg_rainfall
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+WHERE EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2018
+GROUP BY d.district_name;",8.49,GENERAL,N/A
+What is the total rainfall recorded at STATE level in 2012?,"(None,)","('assam', Decimal('127408.80'))",FALSE,N/A,"SELECT s.state_name, SUM(lr.rainfall_value) AS total_rainfall
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2012
+GROUP BY s.state_name
+ORDER BY total_rainfall DESC
+LIMIT 1;",8.37,GENERAL,N/A
+Which state has the highest reservoir level in 2010?,Tamil Nadu,tamil nadu,TRUE,"SELECT s.state_name, MAX(l.level) AS highest_reservoir_level FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l JOIN npcyf_schema.""DISTRICT"" AS d ON d.district_id = l.location_id JOIN npcyf_schema.""STATE"" AS s ON s.state_id = d.state_id WHERE l.location_type = 'DISTRICT' AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2010 GROUP BY s.state_name ORDER BY highest_reservoir_level DESC LIMIT 1;","SELECT s.state_name
+FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE EXTRACT(YEAR FROM lr.reservoir_level_recorded_date) = 2010
+GROUP BY s.state_name
+ORDER BY MAX(lr.level) DESC
+LIMIT 1;",5.95,GENERAL,N/A
+What is the average rainfall of West Bengal in 2005?,4.852539784,4.852539784,TRUE,"SELECT AVG(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND s.state_name ILIKE '%West Bengal%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2005;","SELECT AVG(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%West Bengal%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2005",4.14,STATE,West Bengal
+Find the maximum rainfall recorded for Odisha in 2020?,308.42,308.42,TRUE,"SELECT MAX(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND s.state_name ILIKE '%Odisha%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2020;","SELECT MAX(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Odisha%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2020;",4.09,STATE,Odisha
+Show the yearly rainfall of Bihar between 2000 and 2010?,"2010 | 60740.48
+2009 | 69792.23
+2008 | 95138.36
+2007 | 119489.06
+2006 | 82328.01
+2005 | 75145.16
+2004 | 92612.36
+2003 | 109571.20
+2002 | 91977.41
+2001 | 103579.54
+2000 | 96706.95","(Decimal('2000'), Decimal('96706.95'))",TRUE,"SELECT EXTRACT(YEAR FROM l.rainfall_recorded_date) AS year,
+       SUM(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND s.state_name ILIKE '%Bihar%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) BETWEEN 2000 AND 2010
+GROUP BY year
+ORDER BY year;","SELECT EXTRACT(YEAR FROM rainfall_recorded_date) AS year, SUM(rainfall_value) AS total_rainfall
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Bihar%'
+AND EXTRACT(YEAR FROM rainfall_recorded_date) BETWEEN 2000 AND 2010
+GROUP BY EXTRACT(YEAR FROM rainfall_recorded_date)
+ORDER BY year;",5.53,STATE,Bihar
+Give rainfall values grouped by rainfall_data_collection_id?,15 | 19424536.03,"(2, Decimal('15145662.87'))",TRUE,"SELECT l.rainfall_data_collection_id,
+       SUM(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+GROUP BY l.rainfall_data_collection_id;","SELECT rainfall_data_collection_id, SUM(rainfall_value) AS total_rainfall
+FROM npcyf_schema.""LOCATION_RAINFALL""
+GROUP BY rainfall_data_collection_id;",6.61,GENERAL,N/A
+what is the highest temperature in jodhpur in 2020?,44.9,44.9,TRUE,"SELECT MAX(lt.temperature_value) 
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS lt 
+JOIN npcyf_schema.""DISTRICT"" AS d ON lt.location_type = 'DISTRICT' AND lt.location_id = d.district_id 
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id 
+WHERE d.district_name ILIKE '%Jodhpur%' AND EXTRACT(YEAR FROM lt.temperature_recorded_date) = 2020;","SELECT MAX(T1.temperature_value)
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""DISTRICT"" AS T2 ON T1.location_type = 'DISTRICT' AND T1.location_id = T2.district_id
+WHERE T2.district_name ILIKE '%Jodhpur%' AND EXTRACT(YEAR FROM T1.temperature_recorded_date) = 2020",11.98,DISTRICT,Jodhpur
+what is the lowest temperature in jaipur in 2024?,4.84,4.84,TRUE,"SELECT MIN(t.temperature_value)
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = t.location_id
+WHERE t.location_type = 'DISTRICT'
+  AND d.district_name ILIKE '%Jaipur%'
+  AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2024;","SELECT MIN(T1.temperature_value)
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS T1
+JOIN npcyf_schema.""DISTRICT"" AS T2 ON T1.location_type = 'DISTRICT' AND T1.location_id = T2.district_id
+WHERE T2.district_name ILIKE '%Jaipur%' AND EXTRACT(YEAR FROM T1.temperature_recorded_date) = 2024",11.92,DISTRICT,Jaipur
+List all crop names available in the database?,"""rice""
+""wheat""
+""barley""
+""maize""
+""jowar""
+""bajra""
+""small millets""
+""potato""
+""rapeseed &mustard""
+""masoor""
+""ragi""
+""total food grains""
+""other kharif pulses""
+""other rabi pulses""
+""shree anna /nutri cereals""
+""nutri/coarse cereals""
+""cereals""
+""tur""
+""gram""
+""urad""
+""moong""
+""lentil""
+""other pulses""
+""total pulses""
+""castor seed""
+""cotton""
+""groundnut""
+""soyabean""
+""sugarcane""
+""arhar/tur""
+""cotton(lint)""","('rice',)",TRUE,"SELECT crop_name FROM npcyf_schema.""""CROP"""";","SELECT crop_name
+FROM npcyf_schema.""CROP"";",2.6,GENERAL,N/A
+How many crops exist in the CROP table?,31,31,TRUE,"SELECT COUNT(*) FROM npcyf_schema.""""CROP"""";","SELECT COUNT(crop_id) FROM npcyf_schema.""CROP"";",2.01,GENERAL,N/A
+What is the crop_id of rice?,1,Empty Result,FALSE,"SELECT crop_id FROM npcyf_schema.""CROP"" WHERE crop_name ILIKE '%rice%';","SELECT crop_id
+FROM npcyf_schema.""CROP""
+WHERE crop_name = 'Rice';",2.14,GENERAL,N/A
+what is the rainfall in total rainfall in rajasthan in 2023?,45856.17,45856.17,TRUE,"""SELECT SUM(l.rainfall_value)
+FROM npcyf_schema.""""LOCATION_RAINFALL"""" AS l
+JOIN npcyf_schema.""""DISTRICT"""" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""""STATE"""" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND s.state_name ILIKE '%Rajasthan%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2023;""","SELECT SUM(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE s.state_name ILIKE '%Rajasthan%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2023",4.28,STATE,Rajasthan
+what is the rainfall in Chennai in year 2023?,null,None,TRUE,"SELECT SUM(l.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND d.district_name ILIKE '%Chennai%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2023;","SELECT SUM(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+WHERE d.district_name ILIKE '%Chennai%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2023",3.31,DISTRICT,Chennai
+what is the rainfall in jodhpur in year 2023?,1222.16,1222.16,TRUE,"""SELECT SUM(l.rainfall_value)
+FROM npcyf_schema.""""LOCATION_RAINFALL"""" AS l
+JOIN npcyf_schema.""""DISTRICT"""" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""""STATE"""" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND d.district_name ILIKE '%jodhpur%'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2023;""","SELECT SUM(lr.rainfall_value)
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+WHERE d.district_name ILIKE '%Jodhpur%' AND EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2023",3.38,DISTRICT,Jodhpur
+Top 5 States by Max reservoir Level in 2010,"tamil nadu
+kerala
+karnataka
+odisha
+uttarakhand","('tamil nadu',)",TRUE,"SELECT s.state_name,
+       MAX(l.level) AS max_level
+FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2010
+GROUP BY s.state_name
+ORDER BY max_level DESC
+LIMIT 5;","SELECT s.state_name
+FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE EXTRACT(YEAR FROM lr.reservoir_level_recorded_date) = 2010
+GROUP BY s.state_name
+ORDER BY MAX(lr.level) DESC
+LIMIT 5;",5.62,GENERAL,N/A
+Top 5 States by average  reservoir Level in 2010,"karnataka
+maharashtra
+jammu and kashmir
+kerala
+uttarakhand","('karnataka',)",TRUE,"
+SELECT s.state_name,
+       AVG(l.level) AS avg_reservoir_level
+FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2010
+GROUP BY s.state_name
+ORDER BY avg_reservoir_level DESC
+LIMIT 5;","SELECT s.state_name
+FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE EXTRACT(YEAR FROM lr.reservoir_level_recorded_date) = 2010
+GROUP BY s.state_name
+ORDER BY AVG(lr.level) DESC
+LIMIT 5;",5.22,GENERAL,N/A
+Top 5 States by Total Reservoir Current Live Storage in 2010,"karnataka
+madhya pradesh
+maharashtra
+odisha
+himachal pradesh","('karnataka',)",TRUE,"SELECT s.state_name,
+       SUM(l.current_live_storage) AS total_reservoir_live_storage
+FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND EXTRACT(YEAR FROM l.reservoir_level_recorded_date) = 2010
+GROUP BY s.state_name
+ORDER BY total_reservoir_live_storage DESC
+LIMIT 5;","SELECT s.state_name
+FROM npcyf_schema.""LOCATION_RESERVOIR_LEVEL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE EXTRACT(YEAR FROM lr.reservoir_level_recorded_date) = 2010
+GROUP BY s.state_name
+ORDER BY SUM(lr.current_live_storage) DESC
+LIMIT 5;",4.92,GENERAL,N/A
+top 5 state by total rainfall in 2023,"assam
+uttar pradesh
+madhya pradesh
+maharashtra
+west bengal","('assam',)",TRUE,"SELECT s.state_name,
+       SUM(l.rainfall_value) AS total_rainfall_2023
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2023
+GROUP BY s.state_name
+ORDER BY total_rainfall_2023 DESC
+LIMIT 5;","SELECT s.state_name
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2023
+GROUP BY s.state_name
+ORDER BY SUM(lr.rainfall_value) DESC
+LIMIT 5;",8.49,GENERAL,N/A
+Top 5 states by average rainfall in 2016?,"assam
+west bengal
+kerala
+maharashtra
+uttarakhand","('assam',)",TRUE,"SELECT s.state_name,
+       AVG(l.rainfall_value) AS avg_rainfall_2016
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS l
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = l.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE l.location_type = 'DISTRICT'
+  AND EXTRACT(YEAR FROM l.rainfall_recorded_date) = 2016
+GROUP BY s.state_name
+ORDER BY avg_rainfall_2016 DESC
+LIMIT 5;","SELECT s.state_name
+FROM npcyf_schema.""LOCATION_RAINFALL"" AS lr
+JOIN npcyf_schema.""DISTRICT"" AS d ON lr.location_type = 'DISTRICT' AND lr.location_id = d.district_id
+JOIN npcyf_schema.""STATE"" AS s ON d.state_id = s.state_id
+WHERE EXTRACT(YEAR FROM lr.rainfall_recorded_date) = 2016
+GROUP BY s.state_name
+ORDER BY AVG(lr.rainfall_value) DESC
+LIMIT 5;",9.17,GENERAL,N/A
+top 5 district by average temperature in 2023,"chengalpattu mgr | 32.2204931506849315
+spsnellore | 29.5442876712328767
+east godavari | 29.5013515981735160
+pudukkottai | 29.3989863013698630
+tiruchirapalli trichy | 29.3989863013698630","('chengalpattu mgr',)",TRUE,"SELECT d.district_name,
+       AVG(t.temperature_value) AS avg_temperature_2023
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS t
+JOIN npcyf_schema.""DISTRICT"" AS d
+  ON d.district_id = t.location_id
+JOIN npcyf_schema.""STATE"" AS s
+  ON s.state_id = d.state_id
+WHERE t.location_type = 'DISTRICT'
+  AND EXTRACT(YEAR FROM t.temperature_recorded_date) = 2023
+GROUP BY d.district_name
+ORDER BY avg_temperature_2023 DESC
+LIMIT 5;","SELECT d.district_name
+FROM npcyf_schema.""LOCATION_TEMPERATURE"" AS lt
+JOIN npcyf_schema.""DISTRICT"" AS d ON lt.location_type = 'DISTRICT' AND lt.location_id = d.district_id
+WHERE EXTRACT(YEAR FROM lt.temperature_recorded_date) = 2023
+GROUP BY d.district_name
+ORDER BY AVG(lt.temperature_value) DESC
+LIMIT 5;",12.51,GENERAL,N/A
