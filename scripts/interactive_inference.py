@@ -517,6 +517,12 @@ def interactive_mode():
             intent = result['intent']
             confidence = result['confidence']
             
+            # Apply Environment Threshold
+            threshold = float(os.environ.get("INTENT_THRESHOLD", 0.5))
+            if confidence < threshold and intent != "general":
+                print(f"⚠️  Low confidence ({confidence:.2%}) for '{intent.upper()}'. Falling back to GENERAL.")
+                intent = "general"
+            
             print(f"🤖 Prediction: {intent.upper()}")
             print(f"📊 Confidence: {confidence:.2%}")
             print(f"⏱️  Classification Time: {clf_time_ms:.2f} ms")
